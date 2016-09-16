@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+	<head>
+		<title>MIcrocontroller Projects - Lcd interfacing with microcontrollers</title>
+<meta name="keywords" content="lcd,8x1,8x2,10x2,10x1,16x1,16x2,16x4,20x2,20x4,24x2,30x2,32x2,40x2,microcontroller,8051,89c51,89c52,interfacing,code, command,data,register,enable,read,write,pic,16f877,arduino,with,pinout,description,working,custom,characters,8-bit,4-bit,mode,cg,ram,5x8," />
+<meta property='og:site_name' content='' />
+<meta property='og:title' content='Lcd interfacing with microcontrollers' />
+<meta property='og:description' content='How to interface lcds with microcontrollers pic 16f877, arduino ,8051(89c51,89c52) and projects related to lcds and microcontroller interfacing.' />
+<meta property='og:image' content='http://i1218.photobucket.com/albums/dd402/iftikhi/Pakistan/Pakistan.gif' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/9746898_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/8297559_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/3247246_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/4529029_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/1519572_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/1512288_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/9501058_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/5510451_orig.jpg' />
+<meta property='og:image' content='http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/57906_orig.jpg' />
+<meta property='og:url' content='http://www.microcontroller-project.com/lcd-interfacing.html' />
+<meta http-equiv='cache-control' content='no-cache' />
+<meta property="description" content="How to interface lcds with microcontrollers pic 16f877, arduino ,8051(89c51,89c52) and projects related to lcds and microcontroller interfacing." />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<meta name="google-site-verification" content="k3ZDHVoPLqbI8Yu-tNlRZdj1M2R4Fyc1-Z7WPSVROwI" />
+
+
+
+<meta name="msvalidate.01" content="DA1F449CFEEDB87F11377BFBFB6BCA88" />
+
+<a href="https://plus.google.com/+MicrocontrollerprojectForU" rel="publisher">Visit us on Google+</a>
+		<link rel="stylesheet" type="text/css" href="//cdn2.editmysite.com/css/sites.css?buildTime=1428944871" />
+<link rel="stylesheet" type="text/css" href="//cdn1.editmysite.com/editor/libraries/fancybox/fancybox.css?1428691787" />
+<link rel="stylesheet" type="text/css" href="/files/main_style.css?1428909967" title="wsite-theme-css" />
+<link href='//fonts.googleapis.com/css?family=Glegoo:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+
+<style type='text/css'>
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {line-height:24px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {color:#2a2a2a !important;}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-not-footer h2.wsite-content-title a, .wsite-not-footer .paragraph a, .wsite-not-footer blockquote a, #blogTable .blog-sidebar a, #blogTable .blog-comments a, #blogTable .blog-comments-bottom a, #wsite-com-store a, #wsite-com-product-gen a {color:#5fa233 !important;}
+.wsite-menu-default a {font-family:"Arial" !important;font-size:18px !important;}
+.wsite-menu a {font-family:"Arial" !important;font-size:14px !important;}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {font-family:"Arial" !important;color:#5fa233 !important;line-height:14px !important;}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+.wsite-not-footer h2.wsite-content-title a:hover, .wsite-not-footer .paragraph a:hover, .wsite-not-footer blockquote a:hover, #blogTable .blog-sidebar a:hover, #blogTable .blog-comments a:hover, #blogTable .blog-comments-bottom a:hover, #wsite-com-store a:hover, #wsite-com-product-gen a:hover {color:#5fa233 !important;}
+</style>
+
+		<script><!--
+var STATIC_BASE = '//cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+<script src="//cdn2.editmysite.com/js/site/main.js?buildTime=1428944871"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript"><!--
+	
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"489134996542597023","title":"Home","url":"index.html","target":""},{"id":"926561800108373566","title":"8051","url":"8051.html","target":""},{"id":"697864244116179721","title":"projects","url":"projects.html","target":""},{"id":"723157505947443531","title":"Lcd Interfacing","url":"lcd-interfacing.html","target":""},{"id":"639425558555632864","title":"PIC Microcontroller Projects","url":"pic-microcontroller-projects.html","target":""},{"id":"113114153444349577","title":"c++ projects","url":"c-projects.html","target":""},{"id":"707212912832689778","title":"Arduino","url":"arduino.html","target":""},{"id":"344425751650483507","title":"Xilinx","url":"xilinx.html","target":""},{"id":"661417327627429512","title":"Knowledge based","url":"knowledge-based.html","target":""},{"id":"248419519291227696","title":"About Me","url":"about-me.html","target":""},{"id":"542843242163044076","title":"Contact Me","url":"contact-me.html","target":""},{"id":"685029119791574491","title":"40x4 lcd interfacing with microcontroller","url":"40x4-lcd-interfacing-with-microcontroller.html","target":""}],
+				"723157505947443531",
+				"<li class=\"wsite-menu-item-wrap\"><a href=\"#\" data-membership-required=\"\" class=\"wsite-menu-item\">{{title}}<\/a><\/li>",
+				'active',
+				false,
+				{"site\/menu\/submenu-main":"<div class=\"wsite-menu-wrap\" style=\"display:none\">{{! Designer note: \"wsite-menu-wrap\" required on submenu wrapper }}\n\t<ul class=\"wsite-menu\">{{! Designer note: \"wsite-menu\" required on submenu element }}\n\t\t{{#children}}{{> site\/menu\/submenu-item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","site\/menu\/submenu-item":"<li{{#id}} id=\"{{id}}\"{{\/id}} class=\"wsite-menu-subitem-wrap{{#current_page}} wsite-nav-current{{\/current_page}}\">{{! Designer note: id required & \"wsite-menu-subitem-wrap\" required on the item wrap }}\n\t<a href=\"{{itemlink}}\"{{#target}} target=\"{{target}}\"{{\/target}} class=\"wsite-menu-subitem\">{{! Designer note: \"wsite-menu-subitem\" required on the item link }}\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{itemtitle}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> site\/menu\/submenu-main}}{{\/has_children}}\n<\/li>\n","site\/menu\/main":"<ul class=\"wsite-menu-default\">{{> site\/menu\/main-without-wrap}}<\/ul>{{! Designer note: \"wsite-menu-default\" required on menu element }}\n","site\/menu\/main-without-wrap":"{{#links}}{{!\n}}{{#current_page}}{{> site\/menu\/item-current}}{{\/current_page}}{{!\n}}{{^current_page}}{{> site\/menu\/item}}{{\/current_page}}{{!\n}}{{\/links}}\n","site\/menu\/item-current":"<li{{#id}} id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">{{! Designer note: id required & \"wsite-menu-item-wrap\" required on the item wrapper }}\n\t<a href=\"{{itemlink}}\"{{#target}} target=\"{{target}}\"{{\/target}} class=\"wsite-menu-item\">{{! Designer note: \"wsite-menu-item\" required on the item link }}\n\t\t{{{itemtitle}}}\n\t<\/a>\n\t{{#has_children}}{{> site\/menu\/submenu-main}}{{\/has_children}}\n<\/li>\n","site\/menu\/item":"<li{{#id}} id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">{{! Designer note: id required & \"wsite-menu-item-wrap\" required on the item wrapper }}\n\t<a href=\"{{itemlink}}\" data-membership-required=\"{{membership-required}}\"{{#target}} target=\"{{target}}\"{{\/target}} class=\"wsite-menu-item\">{{! Designer note: \"wsite-menu-item\" required on the item link }}\n\t\t{{{itemtitle}}}\n\t<\/a>\n\t{{#has_children}}{{> site\/menu\/submenu-main}}{{\/has_children}}\n<\/li>\n"}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42860608-1']);
+  _gaq.push(['_setDomainName', 'microcontroller-project.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+<meta name="google-site-verification" content="k3ZDHVoPLqbI8Yu-tNlRZdj1M2R4Fyc1-Z7WPSVROwI" />
+
+
+
+
+
+<script type="text/javascript">
+var infolinks_pid = 2051027;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	</head>
+	<body class=" no-header-page  wsite-theme-light  wsite-page-lcd-interfacing wsite-blog-index"><div id="container">
+	<table id="header">
+		<tr>
+			<td id="logo"><span class="wsite-logo">
+
+	<a href="/">
+	
+	<span id="wsite-title">MIcrocontroller Projects</span>
+	
+	</a>
+
+</span></td>
+			<td id="header-right">
+				<table>
+					<tr>
+						<td class="phone-number"><span class="wsite-text wsite-phone">
+	All About Electronics
+</span></td>
+						<td class="social"><div style="text-align:left;"><div style="height:0px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class='first-child wsite-social-item wsite-social-facebook' href='http://facebook.com' target='_blank'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-twitter' href='http://twitter.com' target='_blank'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-yahoo' href='http://yahoo.com' target='_blank'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-linkedin' href='http://www.linkedin.com' target='_blank'><span class='wsite-social-item-inner'></span></a><a class='last-child wsite-social-item wsite-social-plus' href='https://plus.google.com' target='_blank'><span class='wsite-social-item-inner'></span></a></span>
+<div style="height:0px;overflow:hidden"></div></div></td>
+					</tr>
+				</table>
+				<div class="search"></div>
+			</td>
+		</tr>
+	</table>
+	
+	<div><input type="hidden" name="IL_IN_TAG" value="2"/></div>
+	
+	<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','wBpuGbeUKTzygEB4jfGS');
+</script>    
+
+<table> 
+  <tr>
+    <td align="right"> 
+	
+	<font size="8" color="GREEN">Search For More Microcontroller Projects!!!!!</font>
+	<form><input type="text" id="st-search-input" class="st-search-input" />
+	  </form>
+	
+	</td>
+  </tr>
+</table>
+
+	<!--Moving Text with Akistan Flag -->
+	<div align="center"><FONT 
+color="green" size="+1"><MARQUEE bgcolor="#0000000" 
+direction="left" loop="20" width="75%"><STRONG>We Can also help you in making your Final year projects. We are here in Pakistan.
+<img src = "http://i1218.photobucket.com/albums/dd402/iftikhi/Pakistan/Pakistan.gif" alt= "Pakistan Flag"></img>
+</STRONG></MARQUEE></FONT></DIV>
+	
+	
+	
+	
+	
+	    <div id="main-wrap">
+		<div id="avmenu"><ul class="wsite-menu-default"><li id="pg489134996542597023" class="wsite-menu-item-wrap">
+	<a href="/" data-membership-required="0" class="wsite-menu-item">
+		Home
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-571642529988147914" class="wsite-menu-subitem-wrap">
+	<a href="/pickit2-clone-build-at-home.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Pickit2 clone build at home
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg926561800108373566" class="wsite-menu-item-wrap">
+	<a href="/8051.html" data-membership-required="0" class="wsite-menu-item">
+		8051
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-245761620817855218" class="wsite-menu-subitem-wrap">
+	<a href="/serial-data-received-from-pc-using-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			serial data received from pc using 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-658847542849625365" class="wsite-menu-subitem-wrap">
+	<a href="/door-counter-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			door counter with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-100110369374678926" class="wsite-menu-subitem-wrap">
+	<a href="/leds-with-8255-and-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			leds with 8255 and 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-212729367475434599" class="wsite-menu-subitem-wrap">
+	<a href="/displaying-moving-text-string-on-16x2-lcd-using-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Displaying moving text string on 16x2 lcd using 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-763253424755359097" class="wsite-menu-subitem-wrap">
+	<a href="/calcultor-with-8051-in-c-language.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Calcultor with 8051 in c language
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-253947070258422075" class="wsite-menu-subitem-wrap">
+	<a href="/adc0804-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			adc0804 with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-679939309350574076" class="wsite-menu-subitem-wrap">
+	<a href="/how-to-generate-one-minute-delay-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			how to generate one minute delay with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-461701677838993065" class="wsite-menu-subitem-wrap">
+	<a href="/custom-characters-on-16x2-lcd-using-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Custom characters on 16x2 lcd using 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-841559448459092178" class="wsite-menu-subitem-wrap">
+	<a href="/automatic-door-lock-with-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Automatic door lock with 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-474073358972565206" class="wsite-menu-subitem-wrap">
+	<a href="/fading-led-using-89c51-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Fading led using 89c51 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-394354896595346859" class="wsite-menu-subitem-wrap">
+	<a href="/dc-motor-speed-control-using-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Dc motor speed control using 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-662612845267627482" class="wsite-menu-subitem-wrap">
+	<a href="/alphanumeric-keypad-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			alphanumeric keypad with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg697864244116179721" class="wsite-menu-item-wrap">
+	<a href="/projects.html" data-membership-required="0" class="wsite-menu-item">
+		projects
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-359378852535188110" class="wsite-menu-subitem-wrap">
+	<a href="/room-temperature-with-89c51-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			room temperature with 89c51 microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-732831085667049433" class="wsite-menu-subitem-wrap">
+	<a href="/seven-segment-display-with-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Seven segment display with 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-833870672343356465" class="wsite-menu-subitem-wrap">
+	<a href="/counter-with-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Counter with 8051
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-207828089484831721" class="wsite-menu-subitem-wrap">
+	<a href="/piezo-knock-sensor-used-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Piezo knock sensor used with Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-644243916818667983" class="wsite-menu-subitem-wrap">
+	<a href="/generating-frequency-from-ardunio-board.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Generating frequency from Ardunio board 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-581375171726284748" class="wsite-menu-subitem-wrap">
+	<a href="/ldr-with-piezo-sensor.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			LDR WITH piezo sensor
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-433247052407056579" class="wsite-menu-subitem-wrap">
+	<a href="/displaying-ascii-characters-on-16x2-lcd.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			displaying ascii characters on 16x2 lcd
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-629712716404909258" class="wsite-menu-subitem-wrap">
+	<a href="/uni-directional-dc-motor.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Uni directional DC-motor
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-573329322782653798" class="wsite-menu-subitem-wrap">
+	<a href="/driving-dc-motor-bi-directionaly.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Driving DC motor bi-directionaly
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-158421668518370880" class="wsite-menu-subitem-wrap">
+	<a href="/keypad-and-lcd-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			keypad and lcd with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-119023024301892622" class="wsite-menu-subitem-wrap">
+	<a href="/seven-segment-display-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			seven segment display with arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-366075348718741154" class="wsite-menu-subitem-wrap">
+	<a href="/displaying-ascii-characters-on-16x2-lcd-with-ardunio.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Displaying ASCII characters on 16x2 lcd with Ardunio
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-428562361127156365" class="wsite-menu-subitem-wrap">
+	<a href="/displaying-text-on-16x2-lcd.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			displaying text on 16x2 lcd
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-790070443619346190" class="wsite-menu-subitem-wrap">
+	<a href="/moving-text-on-16x2-lcd-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			moving text on 16x2 lcd with arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-543618935900085780" class="wsite-menu-subitem-wrap">
+	<a href="/serial-data-transmission.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Serial data transmission 
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-576939426528473237" class="wsite-menu-subitem-wrap">
+	<a href="/measuring-room-temperature-with-lm35-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Measuring room temperature with LM35 using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-180126816994899443" class="wsite-menu-subitem-wrap">
+	<a href="/arduino-temperature-sensor-with-lm35.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Arduino temperature sensor with LM35
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-670761824964181701" class="wsite-menu-subitem-wrap">
+	<a href="/scrolling-text-on-lcd-with-pic-16f877.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			scrolling text on lcd with pic 16f877
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-718062166134411747" class="wsite-menu-subitem-wrap">
+	<a href="/alphanumeric-keypad-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			alphanumeric keypad with arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-384649321185251294" class="wsite-menu-subitem-wrap">
+	<a href="/how-to-generate-one-second-delay-with-8051-timers.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			How to generate one second delay with 8051 timers
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-315738277128892745" class="wsite-menu-subitem-wrap">
+	<a href="/name-on-lcd-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			name on lcd with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-482617029655250001" class="wsite-menu-subitem-wrap">
+	<a href="/digital-clock-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Digital clock with 8051 microcontroller 
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-237400290433114436" class="wsite-menu-subitem-wrap">
+	<a href="/digital-alarm-with-8051-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			digital alarm with 8051 microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-609154832487060883" class="wsite-menu-subitem-wrap">
+	<a href="/stepper-motor-with-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			stepper motor with 8051
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-360616995183780990" class="wsite-menu-subitem-wrap">
+	<a href="/button-and-led-with-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			button and led with 8051
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-281258815816285465" class="wsite-menu-subitem-wrap">
+	<a href="/fading-led-with-potentiometer-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Fading led with potentiometer using arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-553056644386966709" class="wsite-menu-subitem-wrap">
+	<a href="/fading-led-with-ldr-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Fading led with ldr using arduino
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-669456449341644906" class="wsite-menu-subitem-wrap">
+	<a href="/bidirectional-motor-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			bidirectional motor with Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-158733000607839720" class="wsite-menu-subitem-wrap">
+	<a href="/fading-leds-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Fading leds using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-419240448461768722" class="wsite-menu-subitem-wrap">
+	<a href="/blinking-leds-with-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Blinking leds with 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-959745677413309240" class="wsite-menu-subitem-wrap">
+	<a href="/graphical-lcd-with-89c51-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Graphical lcd with 89c51 microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-642785394453389173" class="wsite-menu-subitem-wrap">
+	<a href="/making-custom-characters-on-lcd-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Making custom characters on lcd  using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-565902582361334555" class="wsite-menu-subitem-wrap">
+	<a href="/making-custom-urdu-characters-using-8051-micro-controller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Making Custom urdu characters using 8051 micro controller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-922253264439474801" class="wsite-menu-subitem-wrap">
+	<a href="/making-custom-urdu-alphabets-on-16x2-lcd-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Making Custom urdu alphabets on 16x2 lcd using arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="active" class="wsite-menu-item-wrap">
+	<a href="/lcd-interfacing.html" class="wsite-menu-item">
+		Lcd Interfacing
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-879763583183708728" class="wsite-menu-subitem-wrap">
+	<a href="/interfacing-24x2-lcd-with-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			interfacing 24x2 lcd with microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg639425558555632864" class="wsite-menu-item-wrap">
+	<a href="/pic-microcontroller-projects.html" data-membership-required="0" class="wsite-menu-item">
+		PIC Microcontroller Projects
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-270047511748769997" class="wsite-menu-subitem-wrap">
+	<a href="/calculator-with-pic16f877-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			calculator with pic16f877 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-117804170110173602" class="wsite-menu-subitem-wrap">
+	<a href="/graphical-lcd-jhd12864e-with-pic-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Graphical Lcd JHD12864E with Pic Microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-768567377971405333" class="wsite-menu-subitem-wrap">
+	<a href="/displaying-images-on-graphical-lcd.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			displaying images on graphical lcd
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-195528117631097167" class="wsite-menu-subitem-wrap">
+	<a href="/serial-communication-with-pic16f877.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			serial communication with pic16f877
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-581752297877821038" class="wsite-menu-subitem-wrap">
+	<a href="/fan-speed-control-using-pic-16f877.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Fan speed control using pic 16f877 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-887315588260547509" class="wsite-menu-subitem-wrap">
+	<a href="/serial-data-receive-from-pc-using-pic-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			serial data receive from Pc using Pic microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-616373909383495103" class="wsite-menu-subitem-wrap">
+	<a href="/pushbutton-and-led-with-pic.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			pushbutton and led with pic  
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg113114153444349577" class="wsite-menu-item-wrap">
+	<a href="/c-projects.html" data-membership-required="0" class="wsite-menu-item">
+		c   projects
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-801650997751846334" class="wsite-menu-subitem-wrap">
+	<a href="/atm-machine.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			ATM machine
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-957457686629985145" class="wsite-menu-subitem-wrap">
+	<a href="/tic-tack-toe-in-c.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Tic Tack Toe in c++
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-531301963703697928" class="wsite-menu-subitem-wrap">
+	<a href="/toll-tax-system-in-c.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Toll tax system in c++
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-103820709325991235" class="wsite-menu-subitem-wrap">
+	<a href="/bus-reservation-system.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Bus Reservation system
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-126807231752136930" class="wsite-menu-subitem-wrap">
+	<a href="/train-seat-reservation-system-in-c.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Train seat reservation system in c++
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-789746349318688776" class="wsite-menu-subitem-wrap">
+	<a href="/population-data-base.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			population data base
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-311030880480678308" class="wsite-menu-subitem-wrap">
+	<a href="/sorting-class-data-in-c.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Sorting class data in c++
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg707212912832689778" class="wsite-menu-item-wrap">
+	<a href="/arduino.html" data-membership-required="0" class="wsite-menu-item">
+		Arduino
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-441370939833262194" class="wsite-menu-subitem-wrap">
+	<a href="/gsmsim900d-with-arduino-uno.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Gsm(Sim900d) with Arduino uno
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-873495525236490614" class="wsite-menu-subitem-wrap">
+	<a href="/clock-and-calendar-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			clock and calendar with arduino 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-987108319787245895" class="wsite-menu-subitem-wrap">
+	<a href="/calculator-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Calculator using Arduino 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-375629563325947793" class="wsite-menu-subitem-wrap">
+	<a href="/increasing-digital-io-of-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Increasing Digital I/O of Arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg344425751650483507" class="wsite-menu-item-wrap">
+	<a href="/xilinx.html" data-membership-required="0" class="wsite-menu-item">
+		Xilinx
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-323115610949434846" class="wsite-menu-subitem-wrap">
+	<a href="/traffic-lights-on-fpga.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Traffic lights on FPGA
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-531829571157576589" class="wsite-menu-subitem-wrap">
+	<a href="/conditional-sum-adder-in-xilinx.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Conditional sum adder in xilinx
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-935125374207193200" class="wsite-menu-subitem-wrap">
+	<a href="/counter-in-xilinx.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Counter in xilinx
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-279869721255607327" class="wsite-menu-subitem-wrap">
+	<a href="/4x1-mux-8x1-mux-designed-in-xilinx.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			4x1 mux 8x1 mux designed in xilinx
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-735787285210069827" class="wsite-menu-subitem-wrap">
+	<a href="/adder-in-vhdl.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Adder in VHDL  
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-423894296527788013" class="wsite-menu-subitem-wrap">
+	<a href="/bcd-to-seven-segment-decoder-in-xilinx.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			BCD to seven segment decoder in xilinx
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-245821279680138547" class="wsite-menu-subitem-wrap">
+	<a href="/simple-circuit-designed-in-xilinx.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Simple circuit designed in xilinx
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-362019958181910243" class="wsite-menu-subitem-wrap">
+	<a href="/programming-modes-in-xilinx.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Programming modes in xilinx
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg661417327627429512" class="wsite-menu-item-wrap">
+	<a href="/knowledge-based.html" data-membership-required="0" class="wsite-menu-item">
+		Knowledge based
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-333465066579698040" class="wsite-menu-subitem-wrap">
+	<a href="/character-lcd-pinout--working.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Character lcd pinout & working
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-378338193268231391" class="wsite-menu-subitem-wrap">
+	<a href="/lcd-in-4bit-mode-with-pic-microcontroller.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			lcd in 4bit mode with pic microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-507698908700219301" class="wsite-menu-subitem-wrap">
+	<a href="/16x2-lcd-working.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			16x2 LCD working
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-496422853384766079" class="wsite-menu-subitem-wrap">
+	<a href="/how-to-use-lcd-in-4-bit-mode-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			How to use lcd in 4-bit mode with Arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-961068324427923775" class="wsite-menu-subitem-wrap">
+	<a href="/lcd-in-4-bit-mode-and-8-bit-mode.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			lcd in 4-bit mode and 8-bit mode
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-308905414762016768" class="wsite-menu-subitem-wrap">
+	<a href="/commands-and-data-send-to-16x2-lcd.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			commands and data send to 16x2 lcd
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-732206504746770646" class="wsite-menu-subitem-wrap">
+	<a href="/common-anode-and-cathode-7-segment-display.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			common anode and cathode 7-segment display
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-674088130738664090" class="wsite-menu-subitem-wrap">
+	<a href="/internal-timer-registers-of-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Internal Timer Registers of 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-151824665596511748" class="wsite-menu-subitem-wrap">
+	<a href="/max232-pin-out-and-description.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			MAX232 pin out and description
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-933535719759950357" class="wsite-menu-subitem-wrap">
+	<a href="/adc0804-pinout.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			ADC0804 pinout 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-517664935664508515" class="wsite-menu-subitem-wrap">
+	<a href="/driving-a-dc-motor-through-transistor.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Driving a DC motor through Transistor
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-322925298444769948" class="wsite-menu-subitem-wrap">
+	<a href="/l293d-pin-description-and-working.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			L293d pin description and working
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-744973692992209676" class="wsite-menu-subitem-wrap">
+	<a href="/how-to-blink-an-led-using-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			How to Blink an led using 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-831070922339312594" class="wsite-menu-subitem-wrap">
+	<a href="/making-custom-characters-on-16x2-lcd.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Making Custom characters on 16x2 lcd
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-283600736382054847" class="wsite-menu-subitem-wrap">
+	<a href="/8255-pinout-and-working.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			8255 pinout and working
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-256769717428430095" class="wsite-menu-subitem-wrap">
+	<a href="/precautions-using-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Precautions using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-328834015210388141" class="wsite-menu-subitem-wrap">
+	<a href="/128x64-graphical-lcd.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			128x64 graphical lcd
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-519948662367098834" class="wsite-menu-subitem-wrap">
+	<a href="/ir-pair-cuircuit.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			IR pair cuircuit
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-808350478696393874" class="wsite-menu-subitem-wrap">
+	<a href="/difference-between-touch-screens-and-normal-keypads.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			Difference between touch screens and normal keypads
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-589313023282876065" class="wsite-menu-subitem-wrap">
+	<a href="/4x4-4x3-numeric-keypad-programming-with-arduino.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			4x4 ,4x3 numeric keypad programming with arduino 
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-354493280393936287" class="wsite-menu-subitem-wrap">
+	<a href="/4x4-numeric-keypad-programming.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			4x4 numeric keypad programming
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-272719305708059512" class="wsite-menu-subitem-wrap">
+	<a href="/8051-microcontroller-registers.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			8051 microcontroller registers
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-218486517580111166" class="wsite-menu-subitem-wrap">
+	<a href="/4x4-alphanumeric-keypad-programing-in-c-for-8051.html" class="wsite-menu-subitem">
+		<span class="wsite-menu-title">
+			4x4 alphanumeric keypad programing in c for 8051 
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="pg248419519291227696" class="wsite-menu-item-wrap">
+	<a href="/about-me.html" data-membership-required="0" class="wsite-menu-item">
+		About Me
+	</a>
+	
+</li>
+<li id="pg542843242163044076" class="wsite-menu-item-wrap">
+	<a href="/contact-me.html" data-membership-required="0" class="wsite-menu-item">
+		Contact Me
+	</a>
+	
+</li>
+<li id="pg685029119791574491" class="wsite-menu-item-wrap">
+	<a href="/40x4-lcd-interfacing-with-microcontroller.html" data-membership-required="0" class="wsite-menu-item">
+		40x4 lcd interfacing with microcontroller
+	</a>
+	
+</li>
+
+</ul>
+
+		<div>
+		
+		
+<div class="fb-like-box" data-href="https://www.facebook.com/electronicsgru?ref_type=bookmark" data-width="60" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>		
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Half Page -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8954746221155592"
+     data-ad-slot="5278560665"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		</div>
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		<div id="main">
+			<div id="banner">
+				<div class="wsite-header"></div>
+				<em id="tl"></em>
+				<em id="tr"></em>
+				<em id="bl"></em>
+				<em id="br"></em>
+			</div>
+			<div id="content"><div class='wsite-elements wsite-not-footer'>
+<table 
+	id="blogTable" 
+		class="wsite-not-footer" 
+	style="border: 0; width: 100%; table-layout: fixed" 
+>
+	<tr>
+		<td valign="top">
+				<div id="723157505947443531-blog" class="blog-body" style="float: left;"> 
+					<div id="wsite-content">	<div id="blog-post-305516395924789856" class="blog-post">
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="http://www.microcontroller-project.com/lcd-interfacing/displaying-5x10-font-character-on-lcd">Displaying 5x10 font Character on lcd</a>
+			</h2>
+			<p class="blog-date">
+				<span class="date-text">10/1/2014</span>
+			</p>			<p class="blog-comments">
+						<a href="http://www.microcontroller-project.com/lcd-interfacing/displaying-5x10-font-character-on-lcd#comments" class="blog-link">
+							0 Comments
+						</a>
+			</p>
+		</div>
+		<div class="blog-separator">&nbsp;</div>
+		<div class="blog-content">
+				<div class="paragraph" style="text-align:justify;"> <font size="3">Character lcds can display character in 5x8 or 5x10 size dot-matrix. IN 5xN, 5 represents number of Coulombs and N represents number of Rows. Character Lcd's especially which are controlled by Hitachi HD44780 Controller can display 5x8 and 5x10 size font character. Some Lcd's can only display character in 5x8 font. In this Project We are going to display characters on lcd in 5x8 and 5x10 Dot-Matrix.&nbsp;<br> <br> We have to initialize Lcd (8x1, 8x2, 8x4, 16x1, 16x2, 16x4, 20x1, 20x2, 20x4, 24x1, 24x2, 24x4, 32x1, 32x2, 40x1, 40x2, 40x4 &nbsp;) before using it. By initialization I mean&nbsp;<br></font>  <ul> <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Should the Cursor Appears on Lcd or not. If appearing, whether it should be Blinking or normal.</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">What Should be the Size of Character-font appearing on lcd (5x8, 5x10).</span><br></font></li> </ul><font size="3"><br> To learn about Lcd initialization Standard Commands go through the simple tutorial.&nbsp;<br> <a href="/16x2-lcd-working.html">COMMANDS INITIALIZING CHARACTER LCD</a><br> <br> We are going to discuss only commands that are related to Character Size Font-matrix in this tutorial. To intialize character lcd we have to send commands to command-register of lcd. All the commands are 8-bit in nature. For Intializing &nbsp;Character Font size, 8-bit commands individual bits represents</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/9746898_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/9746898_orig.jpg" alt="Character Lcd Font Size Setting command individual bits." style="width:auto;max-width:100%"></a>  <div style="display:block;font-size:90%"> Character Lcd Font Size Setting command individual bits. </div> </div> </div>  <div class="paragraph" style="text-align:justify;"> <ul> <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">DL selects lcd mode 8-bit or 4-bit Dont know Go through the tutorial(<a href="/lcd-in-4-bit-mode-and-8-bit-mode.html">LCD in 4-BIT and 8-BIT MODE</a> )</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">N selects if lcd is of 2 rows or 1</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">F selects Character Font Size</span><br></li> </ul><font size="3"><br> Now if I have a 16x2 lcd and i want to initialize its Character font to be 5x10 my Command will be</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/8297559_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/8297559_orig.jpg" alt="Initializing 16x2 lcd to Display font in 5x10 size matrix." style="width:auto;max-width:100%"></a>  <div style="display:block;font-size:90%"> Initializing 16x2 lcd to Display font in 5x10 size matrix. </div> </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3"><strong>Standard Lcd Commnads for 5x10 Display.</strong></font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/3247246_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/3247246_orig.jpg" alt="Lcd commands for 5x10 Size character Display." style="width:auto;max-width:100%"></a>  <div style="display:block;font-size:90%"> Lcd commands for 5x10 Size character Display. </div> </div> </div>  <div class="paragraph" style="text-align:justify;"> <ul> <li><span style="background-color: initial;"><font size="3"><span style="line-height: 1.5;">You can display 208&nbsp;</span><span style="line-height: 24px;">characters</span><span style="line-height: 1.5;">&nbsp;in 5x8 Font and 32 characters in 5x10 font.&nbsp;Total ASCII characters present in HD44780 are 240. In which 208 are in 5x8 font and 32 are in 5x10 font.&nbsp;</span></font></span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">In CG-RAM You can create 8 custom characters at a time in 5x8 font and 4 custom characters in 5x10 font. Don't know about CG-RAM and Custom Characters Go through(<a href="/making-custom-characters-on-16x2-lcd.html">CG-RAM &amp; CUSTOM CHARACTER GENERATION</a>).&nbsp;</span><br></li> </ul><font size="3"><br> Now i am going to Display charcters on lcd in 5x8 and 5x10 font. I am going to print it on lcd using two different microcontrollers PIC and 8051(89c51,89c52).&nbsp;</font> </div>  <div> <div id="932862788763191122" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <h1>Displaying 5x10, 5x8 Characters on character lcd Using PIC 16f877 Microcontroller.</h1> </div> </div>  <div class="paragraph" style="text-align:justify;"> <strong><font size="4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Project Requirements</font></strong><br>  <ul> <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">PIC 16f877 microcontroller</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">16x2 lcd</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Potentiometer (To set Lcd Contrast)</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Crystal (20 MHz)</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Capacitors 33Pf</span><br></li> </ul><br> <font size="3">I am going to print G,J,P &amp; Q in 5x8 and 5x10 font. These Characters are present in HD44780 Controller in 5x8 and 5x10 font. I will call their adresses and they will appear on lcd. See their Presence in the table given in the <a href="/uploads/2/2/1/5/22159166/hd44780_data_sheet.pdf" target="_blank">DATASHEET FOR HD44780</a> Controller.&nbsp;</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/4529029_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/4529029_orig.jpg" alt="5x8 and 5x10 characters in lcd." style="width:auto;max-width:100%"></a>  <div style="display:block;font-size:90%"> 5x8 and 5x10 characters in lcd. </div> </div> </div>  <div class="paragraph" style="text-align:justify;"> <font size="3">Lcd data pins are Connected to Port-B of Microcontroller. Lcd Control Pins (en,rs,rw) are connected to Port-D&nbsp;Pins#7,6,5. Rest of the connections are normal Connections. Suppling Power to Microcontroller. Grounding GND pin. Connecting Crystal to Microcontroller etc. Circuit Diagram of the Project is Given Below.</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/1519572_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/1519572_orig.jpg" alt="Lcd with Pic 16f877 microcontroller---Circuit Diagram " style="width:auto;max-width:100%"></a>  <div style="display:block;font-size:90%"> Lcd with Pic 16f877 microcontroller---Circuit Diagram </div> </div> </div>  <div class="paragraph" style="text-align:left;"> <strong><font color="#508D24" size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Code</font></strong><br> #include &lt;htc.h&gt;<br> #define _XTAL_FREQ 20000000<br> #define en RD7<br> #define rs RD6<br> #define rw RD5<br> <br> void delay(unsigned int time) &nbsp;//Time delay function<br> {<br> unsigned int i,j;<br> for(i=0;i&lt;time;i++)<br> for(j=0;j&lt;3;j++);<br> }<br> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the command register of LCD<br> void lcdcmd(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw = 0; &nbsp; &nbsp; &nbsp;//read-write-rd<br> en = 1; &nbsp; &nbsp;//enable-e<br> delay(50);<br> en=0; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the data register of LCD<br> void display(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 1; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw= 0; &nbsp; &nbsp; &nbsp; //read-write-rd<br> en= 1; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(500);<br> en=0; &nbsp; &nbsp; &nbsp; &nbsp;//enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//function to initialize the registers and pins of LCD<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//always use with every lcd of hitachi<br> void lcdint(void) &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> {<br> TRISB=0x00; &nbsp; &nbsp;//Port B is used as output port &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> TRISD5=0;<br> TRISD6=0;<br> TRISD7=0;&nbsp;<br> &nbsp; &nbsp; &nbsp;delay(15000);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(4500);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(300);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(650);<br> lcdcmd(0x3C); &nbsp;//5x10 Font Selected<br> delay(50);<br> lcdcmd(0x0C); &nbsp;//Display on Cursor off&nbsp;<br> delay(50);<br> lcdcmd(0x01); &nbsp;//Clear Lcd&nbsp;<br> delay(50);<br> lcdcmd(0x06); &nbsp;//Entry Mode, Increment Cursor Automatically&nbsp;<br> delay(50);<br> lcdcmd(0x80); &nbsp;//Control set at Lcd 1 Row, 1 Coulomb &nbsp;<br> delay(50);<br> }<br> <br> <br> <br> void main()<br> {<br> lcdint();<br> display(0xea);//5x10 J<br> display(0x6a);//5x8 j<br> display(' ');<br> display(0x67);//5x8 g<br> display(0xe7);//5x10 G<br> display(' ');<br> lcdcmd(0xC0);<br> display(0x70);//5x8 p<br> display(0xf0);//5x10 P<br> display(' ');<br> display(0x71);//5x8 q<br> display(0xf1);//5x10 Q<br> while(1);<br> } </div>  <div> <div class="wsite-multicol"> <div class="wsite-multicol-table-wrap" style="margin:0 -15px;"> <table class="wsite-multicol-table"> <tbody class="wsite-multicol-tbody"> <tr class="wsite-multicol-tr"> <td class="wsite-multicol-col" style="width:50%; padding:0 15px;"> <div> <div id="829284578119294326" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- custom sized ad --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8954746221155592" data-ad-slot="2958858666" data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div> </td>  <td class="wsite-multicol-col" style="width:50%; padding:0 15px;"> <div> <div id="791332261951056295" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <font size="6" color="#113453">Download the project files, Code(Hex,c++) and simulation. Code is written using MP-lab ide and High Tech C compiler is used for compiling the code.</font><br> </div> </div>  <div> <div id="514634495698527795" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- new vertical links --> <ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="6051925862"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div> </td> </tr> </tbody> </table> </div> </div> </div>  <div> <div id="283867048155303668" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <h1>Displaying 5x10, 5x8 Characters Using 8051(89c51,89c52) Microcontroller.</h1> </div> </div>  <div class="paragraph" style="text-align:justify;"> <font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>Project Requirements</strong></font><br> <font size="3">8051(89c51,89c52) series microcontroller<br> 16x2 lcd<br> Potentiometer (To set Lcd Contrast)<br> Crystal (11.0592 MHz)<br> Capacitors 33Pf</font><br> <font size="3"><br> Lcd data Pins are connected to Port-1 of microcontroller. Lcd controlling pins en,rs,rw are connected to Port-3 pins#5,6,7. Circuit diagram of the project is given below.</font><br> <br> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/1512288_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/1512288_orig.jpg" alt="Displaying 5x10 font character on lcd using 8051(89c51,89c52) microcontroller - Circuit Diagram " style="width:auto;max-width:100%"></a>  <div style="display:block;font-size:90%"> Displaying 5x10 font character on lcd using 8051(89c51,89c52) microcontroller - Circuit Diagram </div> </div> </div>  <div class="paragraph" style="text-align:left;"> <strong><font size="5"><font color="#508D24">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CODE</font></font></strong><br> <br> &nbsp;#include&lt;reg51.h&gt;<br> sbit rs=P3^5; &nbsp; //Register select (RS)<br> sbit rw=P3^7; &nbsp; //Read write (RW) pin<br> sbit en=P3^6; &nbsp; //Enable (EN) pin<br> <br> void delay(unsigned int time) &nbsp;//Time delay function<br> {<br> unsigned int i,j;<br> for(i=0;i&lt;time;i++)<br> &nbsp; for(j=0;j&lt;5;j++);<br> }<br> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the command register of LCD<br> void lcdcmd(unsigned char value) &nbsp;<br> {<br> P1=value;<br> P3=0x40;<br> delay(50);<br> en=0;<br> delay(50);<br> return;<br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the data register of LCD<br> void display(unsigned char value) &nbsp;<br> {<br> P1=value;<br> P3=0x60;<br> delay(500);<br> en=0;<br> delay(50);<br> return;<br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//function to initialize the registers and pins of LCD<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//always use with every lcd of hitachi<br> void lcdint(void) &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> {<br> P1=0x00; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> P3=0x00;<br> &nbsp;delay(15000);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(4500);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(300);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(650);<br> lcdcmd(0x3C); &nbsp;//5x10 Font Selected<br> delay(50);<br> lcdcmd(0x0C); &nbsp;//Display on Cursor off&nbsp;<br> delay(50);<br> lcdcmd(0x01); &nbsp;//Clear Lcd&nbsp;<br> delay(50);<br> lcdcmd(0x06); &nbsp;//Entry Mode, Increment Cursor Automatically&nbsp;<br> delay(50);<br> lcdcmd(0x80); &nbsp;//Control set at Lcd 1 Row, 1 Coulomb &nbsp;<br> delay(50);<br> }<br> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //MAIN FUNCTION<br> void main()<br> {<br> <br> <br> lcdint();<br> display(0xea);//5x10 J<br> display(0x6a);//5x8 j<br> display(' ');<br> display(0x67);//5x8 g<br> display(0xe7);//5x10 G<br> display(' ');<br> lcdcmd(0xC0);<br> display(0x70);//5x8 p<br> display(0xf0);//5x10 P<br> display(' ');<br> display(0x71);//5x8 q<br> display(0xf1);//5x10 Q<br> while(1);<br> }<br> <br> </div>  <div> <div id="841422889586112164" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <font size="6" color="#72355">Download the project code(HEX,C++) and files. Code for 89c51 microcontroller is written using Keil and for Pic 16f877 is written using MP-Lab IDE. Please give us your feed back on the project.</font><br> </div> </div>  <div> <div id="235026336159911652" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- Image --> <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="7563649866"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div> <div id="450781460499724973" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <h1>See the project video here........</h1> </div> </div>  <div> <div id="469320974311698125" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <div id="fb-root"></div><script> (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk')); </script>  <div class="fb-post" data-href="https://www.facebook.com/video.php?v=577697892359854" data-width="466"> <div class="fb-xfbml-parse-ignore"> <a href="https://www.facebook.com/video.php?v=577697892359854">Post</a> by <a href="https://www.facebook.com/electronicsgru">Microcontroller Projects</a>. </div> </div> </div> </div>  <div> <div id="131551133553003242" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- Top page --> <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="4749784266"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div class="paragraph" style="text-align:left;"> <a href="/uploads/2/2/1/5/22159166/5x10_font_on_lcd_with_pic_16f877_microcontroller.rar"><font size="3" color="#2A2A2A"><span id="selectionBoundary_1412152992420_6863105236552656" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><font color="#2A2A2A">5x10 Font Character with PIC 16f877 Microcontroller</font><span id="selectionBoundary_1412152992420_3791314088739455" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></font></a><br> <a href="/uploads/2/2/1/5/22159166/5x10_font_on_lcd_with_805189c5189c52.rar"><font size="3"><font color="#2A2A2A">5x10 Font Character with 8051(89c51,89c52) Microcontroller</font></font></a><br> </div> 
+		</div>
+			<div class="blog-social">
+				<div class="blog-social-item blog-fb-like"><fb:like href="http://www.microcontroller-project.com/5/post/2014/10/displaying-5x10-font-character-on-lcd.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><a class="twitter-share-button" href="http://twitter.com/share?url=http://www.microcontroller-project.com/5/post/2014/10/displaying-5x10-font-character-on-lcd.html" data-text="Displaying 5x10 font Character on lcd - MIcrocontroller Projects" data-count="horizontal"></a></div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="blog-comments-bottom">
+					<a href="http://www.microcontroller-project.com/lcd-interfacing/displaying-5x10-font-character-on-lcd#comments" class="blog-link">
+						0 Comments
+					</a>
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>	<div id="blog-post-540646330764656315" class="blog-post">
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="http://www.microcontroller-project.com/lcd-interfacing/custom-characters-with-pic-16f877">Custom Characters with Pic 16f877 </a>
+			</h2>
+			<p class="blog-date">
+				<span class="date-text">8/18/2014</span>
+			</p>			<p class="blog-comments">
+						<a href="http://www.microcontroller-project.com/lcd-interfacing/custom-characters-with-pic-16f877#comments" class="blog-link">
+							0 Comments
+						</a>
+			</p>
+		</div>
+		<div class="blog-separator">&nbsp;</div>
+		<div class="blog-content">
+				<div class="paragraph" style="text-align:justify;"> <font size="3">Here is a simple project on how to build custom characters in 16x2 lcd and then print them on lcd. Building and displaying self made custom characters on lcd is not a very hard task. To carry out this task you must know the internal structure of lcd. The size of the Ram, Registers of the lcd, CG-RAM(Character generated ram) of lcd. This CG-RAM is the most important part of lcd for generating and displaying self made characters. CG-RAM is fully disscused in the tutorials below. I recommend you to please take the tutorials other wise you will be unable to understand the code below.</font><br> <br>  <ul style="font-size: medium;"> <li><span style="line-height: 1.5; background-color: initial;"><a href="/making-custom-characters-on-16x2-lcd.html">How to generate Custom Characters in CG-RAM and display them on lcd.</a></span><br></li>  <li><span style="line-height: 1.5; background-color: initial;"><a href="/16x2-lcd-working.html">16x2 lcd working, pinout &amp; registers.</a></span><br></li> </ul><br> <font size="4"><strong>Project Requirements.</strong></font><br>  <ul> <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Microcontroller PIC 16f877</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">16x2 lcd</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Potentiometer (For Setting lcd Contrast)</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Crystal 20MHz</span><br></li>  <li><span style="font-size: medium; line-height: 1.5; background-color: initial;">Connecting wires, Power Supply, Bread board or PCB for circuit.</span><br></li> </ul><br> <font size="3">Circuit diagram of the project is given below. Port-B of PIC 16f877 is connected with data pins of lcd. LCD controlling pins en(enable), rs(register select), r/w(read/write) are connected to Port-D pin 6 and 7. R/W(Read/Write) pin is grounded because we are only writting to lcd, Grounding the pin enables the write operation for lcd. All the other connections are necessary connections to brought the Microcontroller and whole circuit in working condition.</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/9501058_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/9501058_orig.jpg" alt="Circuit Diagram" style="width:100%;max-width:927px"></a>  <div style="display:block;font-size:90%"> Circuit Diagram </div> </div> </div>  <div class="paragraph" style="text-align:justify;"> <font size="3">Code is written in c language using MP-LAB ide and High TECH C compiler is used to compile the code. First i included the header file htc.h. This file must be included in every project which is going to be compiled in High Tech c compiler. Then frequency of the crystal is defined which is 20 MHz. Lcd control pins are defined next. Then some character arrays are defined. These character arrays are actually the custom characters which we are going to display on lcd. Delay function is used to give some arbitrary delay where needed. lcdcmd() function is sending commands to lcd. display() funtion is displaying characters on lcd. lcdint() function is initializing our lcd. In the main function I am generating and then displaying character on lcd.<br> <br> To understand the code you must first know the internal structure of lcd. The tutorials links given above are very helpful for understanding the working and internal structure of CG-RAM of lcd. If you didn't take the tutorials. I recommend you to please go through them before going through the code below. &nbsp;<br> <br> #include&lt;htc.h&gt;<br> #define __XTAL_FREQ 20e6<br> #define en RD7<br> #define rs RD6<br> #define rw RD5<br> char c1[8]={0x04,0x0E,0x0E,0x0E,0x1F,0x04,0x00};<br> char c2[8]={0x00,0x0A,0x04,0x04,0x00,0x0E,0x11};<br> char c3[8]={0x04,0x0A,0x11,0x11,0x0A,0x04};<br> char c4[8]={0x0E,0x0A,0x1F,0x1B,0x1F,0x0A,0x0E};<br> char c5[8]={0x0A,0x04,0x04,0xA,0x11,0x04,0x11};<br> char c6[8]={0x04,0x0A,0x1F,0x0A,0x15,0x1B,0x11};<br> char c7[8]={0x1F,0x11,0x11,0x11,0x11,0x11,0x1F};<br> char c8[8]={0x1F,0x1D,0x1B,0x1D,0x1F,0x10,0x10};<br> <br> void delay(unsigned int time) &nbsp;//Time delay function<br> {<br> unsigned int i,j;<br> for(i=0;i&lt;time;i++)<br> for(j=0;j&lt;10;j++);<br> }<br> &nbsp; &nbsp; &nbsp;//Function for sending values to the command register of LCD<br> void lcdcmd(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw = 0; &nbsp; &nbsp; &nbsp;//read-write-rd<br> en = 1; &nbsp; &nbsp;//enable-e<br> delay(50);<br> en=0; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the data register of LCD<br> void display(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 1; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw= 0; &nbsp; &nbsp; &nbsp; //read-write-rd<br> en= 1; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(500);<br> en=0; &nbsp; &nbsp; &nbsp; &nbsp;//enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//function to initialize the registers and pins of LCD<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//always use with every lcd of hitachi<br> void lcdint(void) &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> {<br> TRISB=0x00; &nbsp; &nbsp;//Port 1 is used as output port &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> TRISD5=0;<br> TRISD6=0;<br> TRISD7=0;&nbsp;<br> delay(15000); display(0x30); delay(4500); display(0x30);<br> delay(300); display(0x30); delay(650);<br> lcdcmd(0x38); delay(50); lcdcmd(0x0C); delay(50);<br> lcdcmd(0x01); delay(50); lcdcmd(0x06); delay(50);<br> lcdcmd(0x80); delay(50);<br> }<br> <br> void main()<br> {<br> unsigned int i;<br> lcdint();<br> <br> lcdcmd(0x40); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 1st character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c1[i]);<br> delay(50);<br> <br> lcdcmd(0x40+8); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 2nd character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c2[i]);<br> delay(50);<br> <br> lcdcmd(0x40+16); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 3rd character Address&nbsp;<br> for(i=0;i&lt;6;i++)<br> display(c3[i]);<br> delay(50);<br> <br> lcdcmd(0x40+24); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 4th character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c4[i]);<br> delay(50);<br> <br> lcdcmd(0x40+32); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 5th character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c5[i]);<br> delay(50);<br> <br> lcdcmd(0x40+40); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 6th character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c6[i]);<br> delay(50);<br> <br> lcdcmd(0x40+48); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 7th character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c7[i]);<br> delay(50);<br> <br> lcdcmd(0x40+56); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //CG-RAM 8th character Address&nbsp;<br> for(i=0;i&lt;7;i++)<br> display(c8[i]);<br> delay(50);<br> <br> lcdcmd(0x01);<br> delay(100);<br> <br> while(1){<br> display(1); &nbsp; &nbsp; &nbsp; //Print first character<br> delay(10000);<br> lcdcmd(0x82);<br> display(2); &nbsp; &nbsp; &nbsp; //Print 2nd &nbsp; character<br> delay(10000);<br> lcdcmd(0x84);<br> display(3); //Print 3rd &nbsp; character<br> delay(10000);<br> lcdcmd(0x86);<br> display(4); //Print 4th &nbsp; character<br> delay(10000);<br> lcdcmd(0x88);<br> display(5); //Print 5th &nbsp; character<br> delay(10000);<br> lcdcmd(0x8A);<br> display(6); //Print 6th &nbsp; character<br> delay(10000);<br> lcdcmd(0x8C);<br> <br> display(7); //Print 7th &nbsp; character<br> delay(10000);<br> lcdcmd(0x8E);<br> display(8); //Print 8th &nbsp; character<br> delay(100000);<br> <br> lcdcmd(0x01); &nbsp; //Clear lcd<br> lcdcmd(0x80); delay(100);<br> }<br> }</font><br> </div>  <div> <div id="780897699508197109" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <font size="6" color="#1569C7">Download the project files, code(C-Code, Hex-Code) and simulation. The code is written in c language using MP-LAB ide and high tech c compiler is used for compiling code. Simulation is made in proteaus 8.0. Please give us your feed back on the project. Write your comments below.</font><br> </div> </div>  <div> <div id="878185410321858811" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- Image --> <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="7563649866"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div> <div id="740474108824175464" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <input type="hidden" name="IL_IN_TAG" value="2"> </div> </div>  <div> <div id="779833390931297264" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- With files --> <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="7703250663"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div class="paragraph" style="text-align:right;"> <a href="/uploads/2/2/1/5/22159166/custom_characters_with_pic.rar" title=""><font size="3"><font color="#2A2A2A">Custom Characters With PIC 16F877</font></font></a> </div> 
+		</div>
+			<div class="blog-social">
+				<div class="blog-social-item blog-fb-like"><fb:like href="http://www.microcontroller-project.com/5/post/2014/08/custom-characters-with-pic-16f877.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><a class="twitter-share-button" href="http://twitter.com/share?url=http://www.microcontroller-project.com/5/post/2014/08/custom-characters-with-pic-16f877.html" data-text="Custom Characters with Pic 16f877  - MIcrocontroller Projects" data-count="horizontal"></a></div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="blog-comments-bottom">
+					<a href="http://www.microcontroller-project.com/lcd-interfacing/custom-characters-with-pic-16f877#comments" class="blog-link">
+						0 Comments
+					</a>
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>	<div id="blog-post-273120540585961007" class="blog-post">
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="http://www.microcontroller-project.com/lcd-interfacing/urdu-characters-on-lcd">Urdu Characters on lcd </a>
+			</h2>
+			<p class="blog-date">
+				<span class="date-text">7/21/2014</span>
+			</p>			<p class="blog-comments">
+						<a href="http://www.microcontroller-project.com/lcd-interfacing/urdu-characters-on-lcd#comments" class="blog-link">
+							2 Comments
+						</a>
+			</p>
+		</div>
+		<div class="blog-separator">&nbsp;</div>
+		<div class="blog-content">
+				<div class="paragraph" style="text-align:justify;"> <font size="3">In this project i am going to display Urdu characters on 16x2 lcd using Pic 16f877 Microcontroller. Lcd HD4478 controller only contains Ascii character set in it and we can only display numeric and English alphabets directly on lcd screen because ascii character set includes numeric and standard english characters. Displaying self made custom characters on lcd requires knowledge about internal structure of lcd. To display Custom characters like urdu you should know about Lcd CG-RAM,Data &amp; Command registers.<br> <br> <strong>Project Requirements<br></strong></font>  <ul> <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Pic 16f877 microcontroller</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">16x2 lcd</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Crystal 20 MHz</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Potentiometer (For setting lcd Contrast)</span><br></font></li> </ul><font size="3"><br> A good and perfect tutorial to understand the internal structure of lcd is given below. Since its very important and lengthy topic so it is not possible to explain it here.&nbsp;<br> <a href="/making-custom-characters-on-16x2-lcd.html" title="">HOW TO GENERATE CUSTOM CHARACTERS ON LCD.</a><br> I recommend you to please take the above tutorial other wise you will be unable to understand the code below.&nbsp;<br> <br> Lcd is interfaced with Pic 16f877 microcontroller in 8-bit mode. Lcd data Pins are directly connected to Port-B of Pic 16f877 &nbsp;microcontroller. Lcd control signals rw(read-write) rs(register select) and en(enable) are provided by Port-D pins RD5,RD6 and RD7 of Pic 16f877 microcontroler. The circuit diagram of the project is given below.</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a href='/uploads/2/2/1/5/22159166/5510451_orig.jpg' rel='lightbox' onclick='if (!lightboxLoaded) return false'><img src="/uploads/2/2/1/5/22159166/5510451_orig.jpg" alt="Urdu Alphabets on 16x2 lcd -- Circuit Diagram" style="width:100%;max-width:927px"></a>  <div style="display:block;font-size:90%"> Urdu Alphabets on 16x2 lcd -- Circuit Diagram </div> </div> </div>  <div class="paragraph" style="text-align:justify;"> <font size="3">Coming&nbsp;to the code portion. The code is written in c language using MP-lab ide. High tech c compiler is used to compile the code. Header file htc.h is imported first. This file is to included in every project that is using high tech c compiler for compiling the code. Then crystal frequency is defined which is 20 MHz(20e6=20^6). Lcd control pins are defined next. Then the delay() function is defined which is generating some delay for us. lcdcmd() function is sending commands to command register of lcd. dispaly() function is sending data to data register of lcd. If you Dont Know about lcd data and command register and their working here is a good tutorial.<br> <br> <a href="/16x2-lcd-working.html">LCD DATA AND COMMAND REGISTERS WORKING.</a><br> <br> Lcdint() function is initializing our lcd. The tutorial given a line above also covers the lcd intialization phase and intializing commands. In the main fuction i am generating urdu alphabets in CG-RAM and then diaplay them on 16x2lcd. First i give command lcdcmd(0x40) to lcd. This 0x40 is the starting address of CG-RAM. Then the individual dots of urdu first character "ALLIF" is send to lcd. Next 0x48 is send to lcd. Which is the second address of CG-RAM Character. Second Character dots are then send to CG-RAM of lcd. This Process repeats for the eight characters. Then all the eight Custom generated characters are invoked for displaying on lcd by just giving their address(0 to 8).<br> <br> After Displaying first eight urdu characters next eight are build in CG-RAM and then displayed on lcd. This process repeats until the last character is displayed. After last character the lcd starts from beginning and starts displaying urdu characters from beginning.&nbsp;<br> <br> Note: Lcd first line continuously display "Urdu Characters!" and the urdu characters are displayed on the second line. Each urdu character is displayed on lcd with one matrix gap from other. Since 16x2 lcd has 16 coulombs so 8 characters with one matrix sepration from others are perfectly displayed on the lcd second line.</font><br> <br> #include&lt;htc.h&gt;<br> #define __XTAL_FREQ 20e6<br> #define en RD7<br> #define rs RD6<br> #define rw RD5<br> <br> void delay(unsigned int time) &nbsp;//Time delay function<br> {<br> unsigned int i,j;<br> for(i=0;i&lt;time;i++)<br> for(j=0;j&lt;30;j++);<br> }<br> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the command register of LCD<br> void lcdcmd(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw = 0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//read-write-rd<br> en = 1; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//enable-e<br> delay(50);<br> en=0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the data register of LCD<br> void display(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 1; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw= 0; &nbsp; &nbsp; &nbsp; //read-write-rd<br> en= 1; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(500);<br> en=0; &nbsp; &nbsp; &nbsp; &nbsp;//enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//function to initialize the registers and pins of LCD<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//always use with every lcd of hitachi<br> void lcdint(void) &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> {<br> TRISB=0x00; &nbsp; &nbsp;//Port 1 is used as output port &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> TRISD5=0;<br> TRISD6=0;<br> TRISD7=0;&nbsp;<br> &nbsp; &nbsp; &nbsp;delay(15000);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(4500);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(300);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(650);<br> lcdcmd(0x38);<br> delay(50);<br> lcdcmd(0x0C);<br> delay(50);<br> lcdcmd(0x01);<br> delay(50);<br> lcdcmd(0x06);<br> delay(50);<br> lcdcmd(0x80);<br> delay(50);<br> }<br> <br> <br> void main()<br> {<br> int i;<br> lcdint();<br> <br> while(1){<br> lcdcmd(0x01);<br> i=0;<br> char line1[]={"Urdu Characters!"};<br> while(line1[i]!='\0')<br> {<br> display(line1[i]);<br> i++;<br> }<br> delay(10000);<br> <br> <br> lcdcmd(0x40); &nbsp; //CG-RAM first address<br> display(0x02);display(0x04);display(0x04);display(0x04);display(0x04);display(0x04);display(0x08);<br> lcdcmd(0x40+8); //CG-RAM second address<br> &nbsp; &nbsp; display(0x00);display(0x00);display(0x00);display(0x11);display(0x0E);display(0X00);display(0X04);<br> lcdcmd(0x40+16); &nbsp;<br> display(0x00);display(0x00);display(0X11);display(0X0E);display(0x00);display(0X0A);display(0X04);<br> lcdcmd(0x40+24); &nbsp;<br> display(0x00);display(0x0A);display(0x00);display(0x11);display(0x0E);display(0x00);display(0x00);<br> lcdcmd(0x40+32); &nbsp;<br> display(0x04);display(0x06);display(0x06);display(0x00);display(0x11);display(0x0E);display(0x00);<br> lcdcmd(0x40+40); &nbsp;<br> display(0x00);display(0x0A);display(0x04);display(0x11);display(0x0E);display(0x00);display(0x00);<br> lcdcmd(0x40+48); &nbsp;<br> display(0x1F);display(0x12);display(0x14);display(0x08);display(0x14);display(0x11);display(0x04);<br> lcdcmd(0x40+56);<br> display(0x1F);display(0x12);display(0x14);display(0x08);display(0x16);display(0x15);display(0x04);<br> <br> delay(5000); &nbsp;<br> lcdcmd(0xC0);//Jump to secod line of 16x2 lcd&nbsp;<br> display(0); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Display first character on lcd.<br> lcdcmd(0xC2);//Jump to second line third Matrix<br> display(1); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Display Second Character on lcd.<br> lcdcmd(0xC4);//Jump to second line fifth Matrix.<br> display(2); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Display third character on lcd.<br> lcdcmd(0xC6);<br> display(3);<br> lcdcmd(0xC8);<br> display(4);<br> lcdcmd(0xCA);<br> display(5);<br> lcdcmd(0xCC);<br> display(6);<br> lcdcmd(0xCE);<br> display(7);<br> <br> <br> delay(100000); &nbsp;//Wait for some time<br> delay(100000);<br> &nbsp;<br> lcdcmd(0x40);<br> display(0x1F);display(0x12);display(0x14);display(0x08);display(0x10);display(0x12);display(0x1E);<br> lcdcmd(0x40+8);<br> display(0x04);display(0x1F);display(0x12);display(0x08);display(0x10);display(0x12);display(0x1E);<br> lcdcmd(0x40+16);<br> display(0x00);display(0x06);display(0x09);display(0x11);display(0x01);display(0x12);display(0x0c);<br> lcdcmd(0x40+24);<br> display(0x08);display(0x06);display(0x09);display(0x11);display(0x01);display(0x12);display(0x0c);<br> lcdcmd(0x40+32);<br> display(0x00);display(0x08);display(0x04);display(0x02);display(0x02);display(0x04);display(0x08);<br> lcdcmd(0x40+40);<br> display(0x04);display(0x08);display(0x04);display(0x02);display(0x02);display(0x04);display(0x08);<br> lcdcmd(0x40+48);<br> display(0x15);display(0x1F);display(0x08);display(0x07);display(0x11);display(0x0E);display(0x00);<br> lcdcmd(0x40+56);<br> display(0x04);display(0x0A);display(0x15);display(0x1F);display(0x08);display(0x07);display(0x11);display(0x0E);<br> <br> delay(5000); &nbsp;<br> lcdcmd(0xC0);<br> display(0);<br> lcdcmd(0xC2);<br> display(1);<br> lcdcmd(0xC4);<br> display(2);<br> lcdcmd(0xC6);<br> display(3);<br> lcdcmd(0xC8);<br> display(4);<br> lcdcmd(0xCA);<br> display(5);<br> lcdcmd(0xCC);<br> display(6);<br> lcdcmd(0xCE);<br> display(7);<br> <br> delay(100000);<br> delay(100000);<br> <br> lcdcmd(0x40);<br> display(0x00);display(0x07);display(0x05);display(0x17);display(0x14);display(0x14);display(0x08);<br> lcdcmd(0x40+8);<br> display(0x02);display(0x07);display(0x05);display(0x17);display(0x14);display(0x14);display(0x08);<br> lcdcmd(0x40+16);<br> display(0x10);display(0x10);display(0x11);display(0x13);display(0x15);display(0x19);display(0x1E);<br> lcdcmd(0x40+24);<br> display(0x10);display(0x10);display(0x15);display(0x13);display(0x15);display(0x19);display(0x1E);<br> lcdcmd(0x40+32);<br> display(0x04);display(0x08);display(0x04);display(0x08);display(0x10);display(0x11),display(0x0E);<br> lcdcmd(0x40+40);<br> display(0x08);display(0x04);display(0x08);display(0x04);display(0x08);display(0x11);display(0x0E);<br> lcdcmd(0x40+48);<br> display(0x00);display(0x02);display(0x05);display(0x0A);display(0x04);display(0x11);display(0x0E);<br> lcdcmd(0x40+56);<br> display(0x00);display(0x00);display(0x01);display(0x02);display(0x04);display(0x11);display(0x0E);<br> <br> delay(5000); &nbsp;<br> lcdcmd(0xC0);<br> display(0);<br> lcdcmd(0xC2);<br> display(1);<br> lcdcmd(0xC4);<br> display(2);<br> lcdcmd(0xC6);<br> display(3);<br> lcdcmd(0xC8);<br> display(4);<br> lcdcmd(0xCA);<br> display(5);<br> lcdcmd(0xCC);<br> display(6);<br> lcdcmd(0xCE);<br> display(7);<br> <br> delay(100000);<br> delay(100000);<br> <br> lcdcmd(0x40);<br> display(0x01);display(0x01);display(0x01);display(0x01);display(0x11);display(0x11);display(0x0E);<br> lcdcmd(0x40+8);<br> display(0x1F);display(0x15);display(0x17);display(0x10);display(0x10);display(0x10);display(0x10);<br> lcdcmd(0x40+16);<br> display(0x11);display(0x11);display(0x15);display(0x11);display(0x0A);display(0x00);display(0x00);<br> lcdcmd(0x40+24);<br> display(0x04);display(0x0A);display(0x15);display(0x15);display(0x08);display(0x10);display(0x00);<br> lcdcmd(0x40+32);<br> display(0x02);display(0x05);display(0x04);display(0x03);display(0x11);display(0x11);display(0x0E);<br> lcdcmd(0x40+40);<br> display(0x00);display(0x00);display(0x01);display(0x1F);display(0x10);display(0x1F);display(0x00);<br> <br> delay(5000); &nbsp;<br> lcdcmd(0xC0);<br> display(' ');<br> lcdcmd(0xC2);<br> display(0);<br> lcdcmd(0xC4);<br> display(1);<br> lcdcmd(0xC6);<br> display(2);<br> lcdcmd(0xC8);<br> display(3);<br> lcdcmd(0xCA);<br> display(4);<br> lcdcmd(0xCC);<br> display(5);<br> &nbsp;lcdcmd(0xCE);<br> display(' ');<br> delay(10000);<br> delay(10000);<br> }<br> &nbsp;<br> } </div>  <div> <div id="944243627401347335" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <font size="6" color="#1569C7">Download the project files,code and simulation. The code is written in c language using MP-lab ide and high tech c compiler. Simulation is made in proteaus 8.0. If you have any questions regarding the post please feel free to write your comments below.</font><br> </div> </div>  <div> <div id="790706933459491147" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- new vertical links --> <ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="6051925862"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div> <div id="263370496890193364" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- Top page --> <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="4749784266"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div class="paragraph" style="text-align:left;"> <a href="/uploads/2/2/1/5/22159166/urdu_characters_with_pic.rar"><font color="#2A2A2A" size="3">Urdu Alphabets on lcd using PIC 16f877 Microcontroller</font></a> </div> 
+		</div>
+			<div class="blog-social">
+				<div class="blog-social-item blog-fb-like"><fb:like href="http://www.microcontroller-project.com/5/post/2014/07/urdu-characters-on-lcd.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><a class="twitter-share-button" href="http://twitter.com/share?url=http://www.microcontroller-project.com/5/post/2014/07/urdu-characters-on-lcd.html" data-text="Urdu Characters on lcd  - MIcrocontroller Projects" data-count="horizontal"></a></div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="blog-comments-bottom">
+					<a href="http://www.microcontroller-project.com/lcd-interfacing/urdu-characters-on-lcd#comments" class="blog-link">
+						2 Comments
+					</a>
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>	<div id="blog-post-395581780266478802" class="blog-post">
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="http://www.microcontroller-project.com/lcd-interfacing/ascii-characters-on-16x2-lcd-using-pic-16f877-microcontroller">Ascii Characters on 16x2 lcd Using PIC 16f877 Microcontroller</a>
+			</h2>
+			<p class="blog-date">
+				<span class="date-text">7/8/2014</span>
+			</p>			<p class="blog-comments">
+						<a href="http://www.microcontroller-project.com/lcd-interfacing/ascii-characters-on-16x2-lcd-using-pic-16f877-microcontroller#comments" class="blog-link">
+							0 Comments
+						</a>
+			</p>
+		</div>
+		<div class="blog-separator">&nbsp;</div>
+		<div class="blog-content">
+				<div class="paragraph" style="text-align:justify;"> <font size="3">In this tutorial i am going to print ascii characters on 16x2 lcd using PIC 16f877 microcontroller. Lcd is interfaced with Pic microcontroller in 8-bit mode. The code is written in c language using high tech c compiler and Mp-lab. Lcd interfacing with microcontroller and code is very easy. Only the portion which is little bit complex is how generate ascii characters. Well you dont need to generate ascii characters they are already present in the lcd controller (HD44780). You just need to know how to invoke the ascii characters to be displayed on the screen. In the code portion it is explained.<br> <br> <strong>Project Requirements</strong><br></font>  <ul> <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Pic 16f877 microcontroller.</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">16x2 lcd.&nbsp;</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Crystal 20MHz</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Power Supply</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Bread board or Design PCB(Printed circuit board)</span><br></font></li>  <li><font size="3"><span style="line-height: 1.5; background-color: initial;">Potentiometer (For setting lcd contrast)</span><br></font></li> </ul><font size="3"><br> If you are new in the field of microcontrollers and lcds and dont know about lcd pinout,working and internal structure of lcd then please go through the following tutorials. They will clear you about the working of lcd data and command registers. It will also explain you about how to use lcd in 4-bit and 8-bit mode.&nbsp;<br></font>  <ul> <li><font size="3"><span style="line-height: 1.5; background-color: initial;"><a href="/16x2-lcd-working.html" title="">16x2 LCD PINOUT AND WORKING.</a></span></font></li> </ul><font size="3"><br> The circuit diagram of the project is given below. Port-B of Pic 16f877 is connected with data pins of 16x2 lcd. Which means Port-B is used to send commands and data to 16x2 lcd. Lcd controll signals are provided using individual bits of Port-D. All the other connections are normal connections appling vcc to microcontroller and lcd where vcc is necessary. Making GND pins ground. You can see the circuit diagram given below.&nbsp;<br></font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a><img src="/uploads/2/2/1/5/22159166/57906_orig.jpg" alt="Circuit Diagram" style="width:100%;max-width:927px"></a>  <div style="display:block;font-size:90%"> Circuit Diagram </div> </div> </div>  <div class="paragraph" style="text-align:justify;"> <font size="3">In the code process first include the header file htc.h. If you are using high tech c compiler always include this library. Then frequency of the oscillator is defined which is 20MHz. Then individual pins of Port-D are defined. These pins are used to provide controll signals to lcd. delay() function is to generate some delay where necessary. lcdcmd() function is sending commands to lcd with control signals. display() function is sending data to lcd with control signals.lcdint() function is initializing our lcd(4-bit mode,8-bit mode, display on ,cursor off etc).&nbsp;</font><br> <br> <font size="3">In the main function two instructions are invoking ascii characters. The instructions i=j/10; where j is integer(int) and i is character(char). Now when we divide two integers and save result in character(char) variable. The result is stored in ascii format. Since j is 0 and dividing 0 by 10 gives 0. s0 i contains 0 or ascii value of zero.</font><br> <br> <font size="3">The ascii character 0 is present at address 0x30. To go to address 0x00 negate 0x30 from 0x30.The instruction i=i-0x30; is doing the same job. First i contains 0x30 after executing i=i-0x30 i contains 0x00. Hence we are at starting address of ascii characters. Now increment the address one by one and display the ascii character associated with that address on the lcd screen. &nbsp;</font><br> <br> <strong><font size="4">Note</font></strong> <font size="3">that the ascii characters of the HD44780 controller differs from the standard ascii characters. The HD44780 controller contains ascii characters in the following format. Some addresses are also void. So dont get confused when you see the characters like below displayed on your lcd screen.</font> </div>  <div> <div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a><img src="/uploads/2/2/1/5/22159166/2701758_orig.jpg" alt="Ascii Characters of HD44780 Controller" style="width:100%;max-width:960px"></a>  <div style="display:block;font-size:90%"> Ascii Characters of HD44780 Controller </div> </div> </div>  <div> <div class="wsite-multicol"> <div class='wsite-multicol-table-wrap' style='margin:0 -15px'> <table class='wsite-multicol-table'> <tbody class='wsite-multicol-tbody'> <tr class='wsite-multicol-tr'> <td class='wsite-multicol-col' style='width:50%;padding:0 15px'> <div class="paragraph" style="text-align:left;"> <font size="3">#include &lt;htc.h&gt;<br> #define _XTAL_FREQ 20000000<br> #define en RD7<br> #define rs RD6<br> #define rw RD5<br> <br> void delay(unsigned int time) &nbsp;//Time delay function<br> {<br> unsigned int i,j;<br> for(i=0;i&lt;time;i++)<br> for(j=0;j&lt;5;j++);<br> }<br> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the command register of LCD<br> void lcdcmd(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw = 0; &nbsp; &nbsp; &nbsp;//read-write-rd<br> en = 1; &nbsp; &nbsp;//enable-e<br> delay(50);<br> en=0; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Function for sending values to the data register of LCD<br> void display(unsigned char value) &nbsp;<br> {<br> PORTB=value;<br> rs= 1; &nbsp; &nbsp; &nbsp; //register select-rs&nbsp;<br> rw= 0; &nbsp; &nbsp; &nbsp; //read-write-rd<br> en= 1; &nbsp; &nbsp; &nbsp; //enable-e<br> delay(500);<br> en=0; &nbsp; &nbsp; &nbsp; &nbsp;//enable-e<br> delay(50);<br> <br> }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//function to initialize the registers and pins of LCD<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//always use with every lcd of hitachi<br> void lcdint(void) &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> {<br> TRISB=0x00; &nbsp; &nbsp;//Port 1 is used as output port &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> TRISD5=0;<br> TRISD6=0;<br> TRISD7=0;&nbsp;<br> &nbsp; &nbsp; delay(15000);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(4500);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(300);<br> &nbsp; &nbsp; &nbsp;display(0x30);<br> &nbsp; &nbsp; &nbsp;delay(650);<br> lcdcmd(0x38);<br> delay(50);<br> lcdcmd(0x0C);<br> delay(50);<br> lcdcmd(0x01);<br> delay(50);<br> lcdcmd(0x06);<br> delay(50);<br> lcdcmd(0x80);<br> delay(50);<br> }<br> <br> void main()<br> {<br> char i;<br> unsigned int j,k;<br> j=0;k=0;<br> i=j/10;<br> i=i-0x30;<br> lcdint();<br> <br> while(j!=255){<br> display(i);j++;i++;k++;<br> <br> if(k==15){</font><br> <font size="3">lcdcmd(0xC0);</font><br> <font size="3">}<br> if(k==31){</font><br> <font size="3">lcdcmd(0x80);</font><br> <font size="3">k=0;</font><br> <font size="3">lcdcmd(0x01);}<br> delay(12000);<br> }}</font><br> </div> </td>  <td class='wsite-multicol-col' style='width:50%;padding:0 15px'> <div class="wsite-spacer" style="height:50px;"></div> </td> </tr> </tbody> </table> </div> </div> </div>  <div> <div id="738357501547597925" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <font size="6" color="#1569C7">Download the project files , code and simulation. The code is written in c language using Mp-lab software and high tech c compiler. The simulation is made in proteaus 8.0. Please give us your feed back on the project.</font><br> </div> </div>  <div> <div id="486372553302136428" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- vertical links --> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:90px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="9708460268"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div> <div id="420404194214758731" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"> </script> <!-- Image --> <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="7563649866"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> </div>  <div class="paragraph" style="text-align:left;"> <a href="/uploads/2/2/1/5/22159166/ascii.rar" title=""><font size="3"><font color="#2A2A2A">Ascii Characters with Pic 16f877 Microcontroller</font></font></a> </div> 
+		</div>
+			<div class="blog-social">
+				<div class="blog-social-item blog-fb-like"><fb:like href="http://www.microcontroller-project.com/5/post/2014/07/ascii-characters-on-16x2-lcd-using-pic-16f877-microcontroller.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><a class="twitter-share-button" href="http://twitter.com/share?url=http://www.microcontroller-project.com/5/post/2014/07/ascii-characters-on-16x2-lcd-using-pic-16f877-microcontroller.html" data-text="Ascii Characters on 16x2 lcd Using PIC 16f877 Microcontroller - MIcrocontroller Projects" data-count="horizontal"></a></div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="blog-comments-bottom">
+					<a href="http://www.microcontroller-project.com/lcd-interfacing/ascii-characters-on-16x2-lcd-using-pic-16f877-microcontroller#comments" class="blog-link">
+						0 Comments
+					</a>
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>
+
+
+<a name="comments" id="comments"></a>
+<div id="commentArea">
+	<div class="blog-comment-area">
+		
+		
+	</div>
+	<!-- bid-1: , path:  -->
+</div>
+ 
+<!-- bid: $blog_id --></div>
+				</div>
+		</td>
+	</tr>
+</table>
+</div>
+</div>
+			<div id="footer"><div class='wsite-elements wsite-footer'>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:40.748898678414%; padding:0 15px;">
+					
+						
+
+<div class="paragraph" style="text-align:left;"><strong style="line-height: 1.5; color: rgb(80, 141, 36); background-color: initial;"><font size="4"><font color="#508d24"><a href="/projects.html" title=""><font color="#508d24">8051 projects</font></a>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font><a href="/c-projects.html" title=""><font color="#508d24">C++ projects</font></a></font></strong><br /><font size="4"><span style="line-height: 27px;"><strong><a href="/xilinx.html" title=""><font><font color="#508d24">Xilinx</font></font></a></strong></span></font><font color="#8d2424"><font size="4"><span style="line-height: 27px;"><br /></span></font></font></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:59.251101321586%; padding:0 15px;">
+					
+						
+
+<div class="paragraph" style="text-align:left;"><strong><font size="4"><font color="#508d24"><font color="#508d24"><a href="/projects.html" title=""><span style="line-height: 0; display: none;">&#65279;</span><font color="#508d24">Arduino projects</font><span style="line-height: 0; display: none;">&#65279;</span></a>&nbsp;</font> &nbsp; &nbsp;&nbsp;</font></font></strong><strong style="line-height: 1.5; background-color: initial;"><font size="4"><a href="/knowledge-based.html" title=""><font color="#508d24">Knowledge based</font></a></font></strong><br /><strong><font size="4"><a href="/about-me.html" title=""><font color="#508d24">About me</font></a></font></strong><br /></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="paragraph" style="text-align:center;"><font color="#5fa233">Copyright &copy; 2014 microcontroller-project.com. All rights reserved.<br />Unless otherwise indicated, all materials on these pages are copyrighted by the microcontroller-project.com. All rights reserved. No part of these pages, either text or image may be used for any purpose other than personal use.</font><br /></div></div>
+<script type='text/javascript'>
+<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script>
+</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];      
+  _gaq.push(['_setAccount', 'UA-42860608-1']);
+  _gaq.push(['_setDomainName', 'microcontroller-project.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l5,u22159166.u22159166s216214139321792665"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l5,u22159166.u22159166s216214139321792665" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				jQuery('#commentArea iframe').css('min-height', '410px');
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId : '190291501407',
+			xfbml : true,
+			version : 'v2.2'
+		});
+
+        // Set Facebook comment plugin's colorscheme based off of theme
+		var comments = document.getElementsByClassName('facebook-comment-widget'),
+			scheme = document.body.className.match('wsite-theme-light');
+
+		for (var i = 0; i < comments.length; i++) {
+			comments[i].setAttribute('colorscheme', scheme ? 'light' : 'dark');
+		}
+
+		var fbCommentCounts;
+
+		FB.Event.subscribe('xfbml.render', function(){
+			fbCommentCounts = jQuery('.fb_comments_count');
+			for (var i = 0; i < fbCommentCounts.length; i++) {
+				var commentText = (jQuery(fbCommentCounts[i]).text() == '1' ? "Comment" : "Comments");
+				jQuery(fbCommentCounts[i]).parent().siblings('.fb_comment_count_label').text(commentText);
+			}
+		});
+
+		var comment_callback = function(res) {
+			FB.XFBML.parse(); // Refresh comment counters on page
+		}
+
+		FB.Event.subscribe('comment.create', comment_callback);
+		FB.Event.subscribe('comment.remove', comment_callback);
+
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<script type='text/javascript'>
+	(function() {
+		function j(src, id) {
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = src;
+			if(id) {s.id=id};
+			document.getElementsByTagName('head')[0].appendChild(s);
+		}
+		j('//platform.twi'+'tter.com/widgets.js');
+	})()
+</script>
+	</body>
+</html>

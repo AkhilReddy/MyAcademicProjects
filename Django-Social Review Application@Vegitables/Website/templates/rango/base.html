@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Vegetables - A Ecommerce Category Resposive Website | Home </title>
+    <!-- <title>Akhil's - {% block title %}Vegitable Site!{% endblock %}</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!-- <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet" type="text/css" media="all" /> <!--'1'--> 
+    <script src="{% static 'js/jquery.min.js' %} "></script> 
+    <link href="{% static 'css/style.css' %} " rel="stylesheet" type="text/css" media="all" />	
+    <link href="{% static 'css/bootstrap-fluid-adj.css'%} " rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css'%} " rel="stylesheet" media="screen">
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/twd.ico'%}" />
+
+    <!--Ttheme-style-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="keywords" content="Vegetables web site, Vegtables ,Vegetables e commerce Website" /> <!--Js 2 -->
+   <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+   <!--fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+   <!--//fonts-->
+   <script src="{% static 'js/jquery.easydropdown.js' %}"></script> <!--Js 3 -->
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44397330-1', 'tangowithdjango.com');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+  <!--header-->
+	<div class="header"> <!--Ok1-->
+		<div class="container"> <!--Ok2-->
+			<div class="header-top">	<!--Ok3-->		
+				<div class="logo">                <!--Ok4-->
+                    <a class="brand" href="/rango/"><img src="{% static 'img/logo.png' %}" alt=" " ></a>
+		<!--	<a href="/rango/"><img src="{% static 'img/logo.png' %}" alt=" " ></a> -->
+	<!--4Ok-->  </div> 
+				<div class="search-in">                       <!--Ok5-->
+                <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    {% if user.is_authenticated %}
+                  <!--  <li class="navbar-text">Welcome, {{ user.username }}!</li> -->
+                    <li><a href="/rango/profile/">Profile</a></li>
+                    <li><a href="/rango/logout/">Logout</a></li>
+                        {% else %}
+
+                    <li><a href="/rango/register/">Register</a></li>
+                    <li><a href="/rango/login/">Login</a></li>
+
+                    {% endif %}
+                </ul>
+
+                <ul class="nav">
+                 <!--   {% if user.is_authenticated %}
+                     <li><a href="/rango/restricted/">Restricted</a></li>
+                    <li><a href="/rango/add_category/">Add Category</a></li>
+                    {% endif %}
+<!--
+                    <!--- <li><a href="/rango/search">Search</a></li> 
+                    <li><a href="/rango/index1">TWD</a></li>
+                    <li><a href="/rango/index1">Book</a></li>
+                    <li><a href="/rango/about/">About</a></li>
+-->
+                </ul>
+                
+            </div>
+					<div class="header-grid">                       <!--Ok6-->
+						<ul><ul class="nav pull-right">
+                            {% if user.is_authenticated %}
+                            <li class="navbar-text">Welcome, {{ user.username }}!</li>
+                            {% endif %}
+							<li class="in-up" ><a href="/rango/profile/" class="scroll">Contact</a> <label>|</label></li>
+							<li class="in-up" ><a href="/rango/login/" class="scroll"> Sign in </a> <label>|</label></li>
+							<li ><a href="/rango/register/" class="scroll">Sign up</a> <label>|</label></li>
+							
+                            <li >
+								<!--	<select tabindex="4" class="dropdown">
+										<option value="" class="label" value="">Currency</option>
+                                        <option value="1">Rupees</option>
+										<option value="2">Dollar</option>
+                                        <option value="3">Others</option>
+									</select>
+							</li>	
+                            -->                            
+						</ul>
+		<!--6Ok--></div>
+		        <div class="search-top"> <!--Ok7-->
+					<div class="search">  <!--Ok8-->
+					<form>
+						<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="">
+					</form>
+		<!--8Ok-->  </div> 
+				<div class="cart">          <!--Ok9-->
+				<!--	<a href="#" class="cart-in"> </a>
+					<span></span>
+	<!--9Ok-->  </div>
+				<div class="clearfix"> </div>
+	<!--7Ok-->  </div>
+   <!--5Ok-->	</div>	
+			<div class="clearfix"> </div>
+<!--4Ok--></div>
+		<div class="header-bottom-bottom">
+				<div class="top-nav">
+					<span class="menu"> </span>
+					<ul>
+						<li ><a href="about.html">About Us</a></li>
+						<li><a href="product.html" > Products</a></li>
+						<li><a href="services.html" > Services </a></li>
+						<li><a href="404.html" >Daily Market</a></li>
+						<li><a href="blog.html" > Blog </a></li>
+						<li><a href="contact.html" > Contact </a></li>
+					</ul>	
+				<script>
+					$("span.menu").click(function(){
+						$(".top-nav ul").slideToggle(500, function(){
+						});
+					});
+				</script>			
+				</div>	
+				<div class="clearfix"> </div>
+				</div>
+		</div>
+	</div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>            
+<!--        <a class="brand" href="/rango/">Akhil</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    {% if user.is_authenticated %}
+                    <li class="navbar-text">Welcome, {{ user.username }}!</li>
+                    <li><a href="/rango/profile/">Profile</a></li>
+                    <li><a href="/rango/logout/">Logout</a></li>
+                        {% else %}
+
+                    <li><a href="/rango/register/">Register</a></li>
+                    <li><a href="/rango/login/">Login</a></li>
+
+                    {% endif %}
+                </ul>
+
+                <ul class="nav">
+                    {% if user.is_authenticated %}
+                    <!-- <li><a href="/rango/restricted/">Restricted</a></li> 
+-->
+<!--                    <li><a href="/rango/add_category/">Add Category</a></li>
+                    {% endif %}
+
+                    <li><a href="/rango/search">Search</a></li> 
+                    <li><a href="/rango/index1">TWD</a></li>
+                    <li><a href="/rango/index1">Book</a></li>
+                    <li><a href="/rango/about/">About</a></li>
+                </ul>
+            </div>
+-->            
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li></li>
+                    <li></li>
+                    {% block navbar %}
+                    {% endblock %}
+                </ul>
+
+		<ul class="nav nav-list">
+			<li class="nav-header">Find a Category</li>
+			<form>
+			<label></label>
+			<li><input  class="search-query span10" type="text" name="suggestion" value="" id="suggestion" /></li>
+			</form>
+		</ul>
+
+        {% if cat_list %}
+		    <div id="cats">
+			    {% include 'rango/category_list.html' with cat_list=cat_list %}
+		    </div>
+	    {% endif %}
+<!---
+    <div id="cats">
+		   {% if cat_list %}
+			<ul class="nav nav-list"><li>Category List</li></ul>
+			   {% include 'rango/category_list.html' with cat_list=cat_list %}
+		   {% endif %}
+		</div>
+--->
+
+
+            </div>
+            <!--/.well -->
+
+        </div>
+        <!--/span-->
+        <div class="span9">
+
+            {% block body_block %}
+            {% endblock %}
+
+        </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
+
+</div>
+<!--/.fluid-container-->
+
+<hr>
+<div class="banner">
+	<!--slider-script-->
+		<script src="{% static 'js/responsiveslides.min.js' %}"></script>  <!--Js 3 -->
+			<script>
+				$(function () {
+				  $("#slider").responsiveSlides({
+					auto: true,
+					speed: 500,
+					namespace: "callbacks",
+					pager: true,
+				  });
+				});
+			</script>
+<div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider">
+			        <li>
+			          <img src="{% static 'img/banner.jpg' %}" alt="" />
+					  <div class="banner-matter">
+						<div class="price">
+						  <h2>We Got Every Vegetable  in Your price</h2>
+						  </div>
+							<div class="banner-para">							
+								<p>You are lokking for Vegitables</p>
+							</div>
+					  </div>
+			        </li>
+			        <li>
+			          <img src="{% static 'img/banner1.jpg' %}" alt="" />
+					  <div class="banner-matter">
+						 <div class="price">
+						  <h2>We Got Every Vegetable  in Your price</h2>
+						  </div>
+							<div class="banner-para">							
+								<p>You are lokking for Vegitables</p>
+							</div>
+					  </div>
+			        </li>
+			        <li>
+			          <img src="{% static 'img/banner2.jpg' %}" alt="" />
+					  <div class="banner-matter">
+						 <div class="price">
+						  <h2>We Got Every Vegetable  in Your price</h2>
+						  </div>
+							<div class="banner-para">
+								
+								<p>You are lokking for Vegitables</p>
+							</div>
+					  </div>
+			        </li>
+			      </ul>
+			    </div>
+			</div>				
+			<!-- //slider-->
+			<!--content-->
+            
+			<div class="content">
+				<div class="container">
+				<div class="top-content">
+					<div class="content-top">
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi1.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health  </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi2.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi3.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health  </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="clearfix"> </div>
+						</div>			
+						<div class="content-top">
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi4.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi5.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi6.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'img/pi7.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health  </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					</div>
+				</div>
+				<!---->
+				<!--wmu Slider -->
+					 <div class="content-bottom-top">
+						<div class="wmuSlider example1">
+							   <div class="wmuSliderWrapper">
+								   <article style="position: absolute; width: 100%; opacity: 0;">
+								   	<div class="content-bottom">
+										<div class="container">
+											<span class="corn"> </span>
+											<h3>Who we Are ?</h3>
+											<p>We are Vegitables Suppliers</p>
+										</div>
+									</div>
+								 	</article>
+								 	 <article style="position: absolute; width: 100%; opacity: 0;">
+								 	 		<div class="content-bottom">
+										<div class="container">
+											<span class="corn corn-in"> </span>
+											<h3>Who we Are ?</h3>
+											<p>We are Vegitables Exporters </p>
+										</div>
+									</div>
+								 	</article>
+								 	 <article style="position: absolute; width: 100%; opacity: 0;">
+								 	 		<div class="content-bottom">
+										<div class="container">
+											<span class="corn"> </span>
+											<h3>Who we Are ?</h3>
+											<p>We Export to Gulf and USA</p>
+										</div>
+									</div>
+								 	</article>
+								 </div>
+				            <script src="{% static 'js/jquery.wmuSlider.js' %}"></script> 
+							  <script>
+				       			$('.example1').wmuSlider();         
+				   		     </script> 	           	         
+					</div>
+					</div>
+
+<footer>
+<!--
+    <div class="container">
+        <p>&copy; Aki's Vegitable Site 2015</p>
+    </div>
+-->
+</footer>
+
+
+<hr/>
+
+
+<script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/rango-ajax.js' %}"></script>
+
+<div class="map-top">
+	<div class="map">
+                <!--embedded map--
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12947831.742778081!2d-95.665!3d37.599999999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1422444552833" ></iframe>
+                !-->
+			<iframe src="https://www.google.co.in/maps/@13.0475227,80.0689252,11z" ></iframe>
+				</div>
+					<div class="address">
+						<h5>Address</h5>
+						<p>Near Katpadi Rd, Vellore, Tamil Nadu 632014</p>
+						<a href="mailto:info@akhil.com" class="company">info@akhil.com</a>
+					</div>
+				</div>
+	</div>
+			<!--footer-->
+			<div class="footer">
+				<div class="container">
+                </br>
+                </br>
+                </br>
+					 <p class="footer-grid">Copyright &copy; 2016 vegetables.com <a href="#" target="_blank">Vegitables</a> </p>
+			 	</div> 	
+			</div>
+</body>
+</html>
+

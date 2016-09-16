@@ -1,0 +1,8 @@
+Topic of Intrest : Keyword Based Page Ranking in Specific Domain/Single Domain
+                    (Keyword extraction based on pagerank)
+
+Doc 1 : Gives intro To Page Ranking. 
+Doc 2 : Keyword and Weighted Page Ranking.
+Doc 3 : Similar Papers on Page Ranking by Keywords.
+
+

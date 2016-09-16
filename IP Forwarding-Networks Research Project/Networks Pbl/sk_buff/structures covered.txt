@@ -1,0 +1,13 @@
+sk_buff :
+1.sk_buff
+2.sk_buff_head
+3.sock
+4.timeval
+5.net_device
+6.dst_entry
+7.sec_path
+
+
+
+
+Some features of my driver need the route info when transmitting packets, so I use function skb_dst(struct sk_buff *) to get the dst_entry pointer.

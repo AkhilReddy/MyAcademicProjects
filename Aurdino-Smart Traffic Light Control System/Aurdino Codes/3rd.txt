@@ -1,0 +1,88 @@
+int pin1 =12;
+int pin2 =8;
+int pin3=7;
+int pin4=13;
+int pin5=2;
+int pin6=A0;
+int pushButton= 4;
+int pina[200];
+int i=0;
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  // make the pushbutton's pin an input:
+  //make pin1,pin2,pin3 as output:
+  pinMode(pin1, OUTPUT);
+  pinMode(pin2,OUTPUT);
+  pinMode(pin3,OUTPUT);
+   pinMode(pin4, OUTPUT);
+  pinMode(pin5,OUTPUT);
+  pinMode(pin6,OUTPUT);
+  
+  pinMode(pushButton,INPUT);
+}
+void loop() 
+{
+    
+     pina[i] = digitalRead(pushButton);
+  // print out the state of the button:
+  
+  Serial.println(pina[i]);
+  delay(1000);
+  
+  if(pina[i]==0&& pina[i-1]==0&& pina[i-2]==0&& pina[i-3]==1) //{1000} bit pattern
+{
+ digitalWrite(12,HIGH);
+ digitalWrite(13,HIGH);
+ delay(1000);
+ digitalWrite(13,LOW);
+ digitalWrite(2,HIGH);
+ delay(1000);
+ digitalWrite(2,LOW);
+digitalWrite(12,LOW);
+
+digitalWrite(8,HIGH);
+ digitalWrite(13,HIGH);
+ delay(1000);
+ digitalWrite(13,LOW);
+ analogWrite(A0,255);
+ delay(1000);
+analogWrite(A0,0);
+digitalWrite(8,LOW);
+
+digitalWrite(7,HIGH);
+ digitalWrite(2,HIGH);
+ delay(1000);
+ digitalWrite(2,LOW);
+ analogWrite(A0,255);
+ delay(1000);
+digitalWrite(7,LOW);
+analogWrite(A0,0);
+
+}
+
+else if(pina[i]==1&& pina[i-1]==0&& pina[i-2]==0&& pina[i-3]==1) //{1001} bit pattern
+{
+   digitalWrite(12,HIGH);
+ digitalWrite(13,HIGH);
+ delay(500);
+ digitalWrite(13,LOW);
+ digitalWrite(2,HIGH);
+ delay(500);
+
+
+
+}
+else if(pina[i]==1&& pina[i-1]==0&& pina[i-2]==0&& pina[i-3]==0) //{1000} bit pattern
+   {
+   
+ digitalWrite(12,HIGH);
+ digitalWrite(13,HIGH);
+ delay(500);
+ digitalWrite(13,LOW);
+ digitalWrite(2,HIGH);
+ delay(500);
+
+}
+i++;
+}

@@ -1,0 +1,109 @@
+#include <stdio.h>
+
+struct Header
+{
+short int Radar_Type; //. For 30MHz = 1,53MHz=2
+short int baudlength; // Baud length of transmission
+short int nrgb; // No. of Range bins
+short int nfft; // No. of FFT points
+short int ncoh; // No. of Coherent integrations
+short int nicoh; // No. of Incoherent integrations
+short int ipp; // Inter pulse period
+short int pwd; // Pulse width in micro seconds
+short int cflg; // Code flag
+short int nwin; // No. of observation windows
+short int w1start; // Window1 start
+short int w1len; // Window1 length
+short int w2start; // Window2 start – not used
+short int w2len; // Window2 length – not used
+short int year; // Year
+short int month; // Month
+short int day; // Day
+short int hour; // Hour
+short int min; // Minute
+short int sec; // Seconds
+short int nbeams; // No of beams in a beam scan cycle
+short int beam; // Beam position (current)
+short int scancycle; // Number of the beam scan cycle in progress
+short int attn; // Receiver attenuation level – not used
+short int w3start; // 3rd window of observation– not used
+short int w3len; // 3rd window length– not used
+short int simrange1; // Simulated signal range
+short int txpower; // TX power
+short int winfn; // Window fn. used for FFT
+short int noofpulses; // No of pulses in transmission – not used
+short int dtype; // Data type
+short int pulsedelay[9]; // Pulse delay from starting – not used
+short int stc_win; // STC window length – not used
+short int pulsedelay10; // Tenth pulse delay – not used
+short int pulsedelay11; // Eleventh pulse delay – not used
+short int simrange2; // Simulated signal - 2 range – not used
+short int stc_win_start; // STC window start – not used
+short int noOfFreq; // No of frequencies used in Tx seq. of IPP – not used
+float txIFFreq[4]; // IF values used in Transmission – not used
+short int operationMode; // Whether DBS/SDI etc. – not used
+short int adptiveRefRange; // Adaptive reference range – not used
+short int adaptiveRefLevel; // % of the maximum – not used
+char commentCode; // comments of 256 type can be stored. Currently used to store RADAR Mode
+char comment[13 ]; // Sht file name
+float data[512000];
+};
+
+
+int n=0;
+
+int main()
+{
+
+int i,j,count=0,flag=0;
+
+FILE *fp;
+
+struct Header s;
+
+fp=fopen("15AU2015SASHT1.r1","rb");
+
+FILE *f = fopen("out.txt", "w");
+
+fread(&s,sizeof(s),1,fp);
+
+
+fprintf(f, "Channel 1 I data");
+fprintf(f, "real = [ ");
+
+for (n=0 ; n<100 ; n++) 
+{
+      fprintf(f, "%f  ", s.data[n]);
+}
+    
+fprintf(f, "];\n\n");
+
+for( ;n<51200;n++)
+{
+
+}
+
+fprintf(f, "Channel 1 Q data");
+fprintf(f, "Imaginary = [ ");
+
+
+for ( ; n<51300 ; n++) 
+{
+      fprintf(f, "%f  ", s.data[n]);
+}
+
+for( ;n<2*51200;n++)
+{
+
+}
+
+fprintf(f, "];\n");
+
+printf("Total Frames in the file is: %d\n",count);
+
+fclose(fp);
+return 0;
+}
+
+
+

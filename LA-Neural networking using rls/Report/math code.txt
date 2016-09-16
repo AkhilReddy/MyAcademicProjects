@@ -1,0 +1,35 @@
+clc
+clear all
+syms x y z J t
+A=[1 -1 2;3 1 -1;2 3 1]
+Y=[-1;3;1]
+X=[0;0;0];
+I=eye(3);
+P=inv(corrcoef(A))
+N=input('enter the number of iterative steps:')
+t=input('enter the tolerance if required:')
+lam=input('enter the value of lamda:')
+n=input('enter the length of b:')
+
+J=0;
+
+for n = 1:N
+   for k = 1:n
+        b=A*X
+        e(k,:)= b(k,:)-Y(k,:)
+        Q = P * transpose(A(k,:))/(lam+A(k,:) * P * transpose(A(k,:)))
+        X = X + Q*e(k,:)
+        P = ([I - Q*A(k,:)]*P)/lam
+        J = J + 0.5 * e(k,:)^2
+   end
+   
+   if t>J
+       disp(X)
+       disp(n)
+   else
+       J=0
+   end
+end
+       
+        
+        

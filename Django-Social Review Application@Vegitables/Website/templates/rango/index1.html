@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vegetables - A Ecommerce Category Resposive Website | Home </title>
+<link href="{% static 'css/bootstrap.css' %} " rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery.min.js' %} "></script> 
+<link href="{% static 'css/style.css' %} " rel="stylesheet" type="text/css" media="all" />	
+<!--Ttheme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Vegetables web site, Vegtables ,Vegetables e commerce Website" /> <!--Js 2 -->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script src="{% static 'js/jquery.easydropdown.js' %}"></script> <!--Js 3 -->
+</head>
+<body> 
+	  <!--header-->
+	<div class="header"> <!--Ok1-->
+		<div class="container"> <!--Ok2-->
+			<div class="header-top">	<!--Ok3-->		
+				<div class="logo">                <!--Ok4-->
+					<a href="{% static 'index.html' %}"><img src="{% static 'images/logo.png' %}" alt=" " ></a>
+	<!--4Ok-->  </div> 
+				<div class="search-in">                       <!--Ok5-->
+					<div class="header-grid">                       <!--Ok6-->
+						<ul>
+							<li class="in-up" ><a href="{% static 'contact.html' %}" class="scroll">Contact</a> <label>|</label></li>
+							<li class="in-up" ><a href="{% static 'signin.html' %}" class="scroll"> Sign in </a> <label>|</label></li>
+							<li ><a href="{% static 'signup.html' %}" class="scroll">Sign up</a> <label>|</label></li>
+							<li >
+									<select tabindex="4" class="dropdown">
+										<option value="" class="label" value="">Currency</option>
+                                        <option value="1">Rupees</option>
+										<option value="2">Dollar</option>
+                                        <option value="3">Others</option>
+									</select>
+							</li>						
+						</ul>
+		<!--6Ok--></div>
+		        <div class="search-top"> <!--Ok7-->
+					<div class="search">  <!--Ok8-->
+					<form>
+						<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="">
+					</form>
+		<!--8Ok-->  </div> 
+				<div class="cart">          <!--Ok9-->
+					<a href="#" class="cart-in"> </a>
+					<span></span>
+	<!--9Ok-->  </div>
+				<div class="clearfix"> </div>
+	<!--7Ok-->  </div>
+   <!--5Ok-->	</div>	
+			<div class="clearfix"> </div>
+<!--4Ok--></div>
+			<div class="header-bottom-bottom">
+				<div class="top-nav">
+					<span class="menu"> </span>
+					<ul>
+						<li ><a href="about.html">About Us</a></li>
+						<li><a href="product.html" > Products</a></li>
+						<li><a href="services.html" > Services </a></li>
+						<li><a href="404.html" >Daily Market</a></li>
+						<li><a href="blog.html" > Blog </a></li>
+						<li><a href="contact.html" > Contact </a></li>
+					</ul>	
+				<script>
+					$("span.menu").click(function(){
+						$(".top-nav ul").slideToggle(500, function(){
+						});
+					});
+				</script>			
+				</div>	
+				<div class="clearfix"> </div>
+				</div>
+		    </div>
+	</div>
+	<div class="banner">
+	<!--slider-script-->
+		<script src="{% static 'js/responsiveslides.min.js' %}"></script>  <!--Js 3 -->
+			<script>
+				$(function () {
+				  $("#slider").responsiveSlides({
+					auto: true,
+					speed: 500,
+					namespace: "callbacks",
+					pager: true,
+				  });
+				});
+			</script>
+	<!--//slider-script-->
+				<!-- Slideshow 4 -->
+			    <div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider">
+			        <li>
+			          <img src="{% static 'images/banner.jpg' %}" alt="" />
+					  <div class="banner-matter">
+						<div class="price">
+						  <h2>We Got Every Vegetable  in Your price</h2>
+						  </div>
+							<div class="banner-para">							
+								<p>You are lokking for Vegitables</p>
+							</div>
+					  </div>
+			        </li>
+			        <li>
+			          <img src="{% static 'images/banner1.jpg' %}" alt="" />
+					  <div class="banner-matter">
+						 <div class="price">
+						  <h2>We Got Every Vegetable  in Your price</h2>
+						  </div>
+							<div class="banner-para">							
+								<p>You are lokking for Vegitables</p>
+							</div>
+					  </div>
+			        </li>
+			        <li>
+			          <img src="{% static 'images/banner2.jpg' %}" alt="" />
+					  <div class="banner-matter">
+						 <div class="price">
+						  <h2>We Got Every Vegetable  in Your price</h2>
+						  </div>
+							<div class="banner-para">
+								
+								<p>You are lokking for Vegitables</p>
+							</div>
+					  </div>
+			        </li>
+			      </ul>
+			    </div>
+			</div>				
+			<!-- //slider-->
+			<!--content-->
+			<div class="content">
+				<div class="container">
+				<div class="top-content">
+					<div class="content-top">
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi1.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health  </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi2.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi3.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health  </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="clearfix"> </div>
+						</div>			
+						<div class="content-top">
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi4.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi5.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog  </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi6.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="col-md-3 look">
+							<h4><a href="blog.html">Check for Item in Blog </a></h4>
+							<a href="single.html"><img class="img-responsive" src="{% static 'images/pi7.jpg' %}" alt=" " ></a>
+							<p>This is a Vegitable and It's really good for Health  </p>
+							<a href="blog.html" class="btn  btn-1c">Learn More</a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					</div>
+				</div>
+				<!---->
+				<!--wmu Slider -->
+					 <div class="content-bottom-top">
+						<div class="wmuSlider example1">
+							   <div class="wmuSliderWrapper">
+								   <article style="position: absolute; width: 100%; opacity: 0;">
+								   	<div class="content-bottom">
+										<div class="container">
+											<span class="corn"> </span>
+											<h3>Who we Are ?</h3>
+											<p>We are Vegitables Suppliers</p>
+										</div>
+									</div>
+								 	</article>
+								 	 <article style="position: absolute; width: 100%; opacity: 0;">
+								 	 		<div class="content-bottom">
+										<div class="container">
+											<span class="corn corn-in"> </span>
+											<h3>Who we Are ?</h3>
+											<p>We are Vegitables Exporters </p>
+										</div>
+									</div>
+								 	</article>
+								 	 <article style="position: absolute; width: 100%; opacity: 0;">
+								 	 		<div class="content-bottom">
+										<div class="container">
+											<span class="corn"> </span>
+											<h3>Who we Are ?</h3>
+											<p>We Export to Gulf and USA</p>
+										</div>
+									</div>
+								 	</article>
+								 </div>
+				            <script src="{% static 'js/jquery.wmuSlider.js' %}"></script> 
+							  <script>
+				       			$('.example1').wmuSlider();         
+				   		     </script> 	           	         
+					</div>
+					</div>
+
+				<div class="map-top">
+				<div class="map">
+                <!--embedded map--
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12947831.742778081!2d-95.665!3d37.599999999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1422444552833" ></iframe>
+                !-->
+					<iframe src="https://www.google.co.in/maps/@13.0475227,80.0689252,11z" ></iframe>
+				</div>
+					<div class="address">
+						<h5>Address</h5>
+						<p>Near Katpadi Rd, Vellore, Tamil Nadu 632014</p>
+						<a href="mailto:info@akhil.com" class="company">info@akhil.com</a>
+					</div>
+				</div>
+			</div>
+			<!--footer-->
+			<div class="footer">
+				<div class="container">
+					 <p class="footer-grid">Copyright &copy; 2016 vegetables.com <a href="#" target="_blank">Vegitables</a> </p>
+			 	</div> 	
+			</div>
+
+</body>
+</html>

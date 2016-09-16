@@ -1,0 +1,23 @@
+List of Module in order:
+1.aki_lexer
+2.lexer
+3.aki_lexer_driver
+4.combinators
+
+
+
+
+
+
+1.re module:
+   re.comiple:
+   regex.match:
+  match.group(0):
+2.sys.stderr.write:
+   sys.exit(1):
+
+   match.end(0) --> match.  function
+
+Re tags :
+Eg:        (r'[ \n\t]+'), (r'#[^\n]*')
+

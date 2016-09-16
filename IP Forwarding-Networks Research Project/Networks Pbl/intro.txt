@@ -1,0 +1,26 @@
+All network-related queues and buffers in the kernel use a common
+data structure, struct sk_buff. This is a large struct containing all the
+control information required for the packet (datagram, cell, whatever).
+The sk_buff elements are organized as a doubly linked list, in such a
+way that it is very efficient to move an sk_buff element from the
+beginning/end of a list to the beginning/end of another list. A queue is
+defined by struct sk_buff_head, which includes a head and a tail
+pointer to sk_buff elements.
+All the queuing structures include an sk_buff_head representing the
+queue. For instance, struct sock includes a receive and send queue.
+Functions to manage the queues (skb_queue_head(), skb_queue_tail(),
+skb_dequeue(), skb_dequeue_tail()) operate on an sk_buff_head. In
+4/178
+reality, however, the sk_buff_head is included in the doubly linked list
+of sk_buffs (so it actually forms a ring).
+When a sk_buff is allocated, also its data space is allocated from
+kernel memory. sk_buff allocation is done with
+alloc_skb() or dev_alloc_skb(); drivers use dev_alloc_skb(); (free
+by kfree_skb() and dev_kfree_skb()). However, sk_buff provides an
+additional management layer. The data space is divided into a head
+area and a data area. This allows kernel functions to reserve space for
+the header, so that the data doesn't need to be copied around.
+Typically, therefore, after allocating an sk_buff, header space is
+reserved using skb_reserve(). skb_pull(int len) – removes data from
+the start of a buffer (skipping over an existing header) by advancing
+data to data+len and by decreasing len.

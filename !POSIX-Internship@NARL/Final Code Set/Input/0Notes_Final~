@@ -1,0 +1,28 @@
+1.Using <math.h>
+The error you get is that the linker cannot link in the mathematical functions in the final executable.
+Code:
+gcc filemane.c -lm
+The "-lm" option means to link in the library with the mathematical functions (libm.a).
+
+2.Using <fftw3.h>
+To compile this code with gcc we just type in a console
+gcc Example_fftw3.c -lfftw3 -lm 
+
+3.
+
+
+
+
+Links:
+
+fftw3:
+FAQ : http://www.fftw.org/faq/
+      http://www.fftw.org/fftw-wisdom.1.html
+   
+Conjugation:
+http://code-reference.com/c/complex.h/conj
+http://en.cppreference.com/w/c/numeric/complex/conj
+
+Fftshift:
+http://www.dsprelated.com/showthread/comp.dsp/20790-1.php
+http://www.fftw.org/fftw2_doc/fftw_3.html

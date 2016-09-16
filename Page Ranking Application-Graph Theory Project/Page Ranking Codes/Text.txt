@@ -1,0 +1,121 @@
+ActivePython 2.7.10.12 (ActiveState Software Inc.) based on
+Python 2.7.10 (default, Aug 21 2015, 14:42:12) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> ================================ RESTART ================================
+>>> 
+Enter the seed page
+https://www.udacity.com/cs101x/urank/index.html
+Enter What you want to search
+Hummus
+Enter the depth you wanna go
+5
+
+Started crawling, presently at depth..
+4
+3
+2
+1
+0
+
+Printing the results as is with page rank
+
+https://www.udacity.com/cs101x/urank/index.html --> 0.05
+http://udacity.com/cs101x/urank/nickel.html --> 0.0812
+http://udacity.com/cs101x/urank/kathleen.html --> 0.12296
+
+After Sorting the results by page rank
+
+1.	http://udacity.com/cs101x/urank/kathleen.html
+
+2.	http://udacity.com/cs101x/urank/nickel.html
+
+3.	https://www.udacity.com/cs101x/urank/index.html
+
+>>> ================================ RESTART ================================
+>>> 
+Enter the seed page
+http://studcode.com/
+Enter What you want to search
+htmltemplates
+Enter the depth you wanna go
+5
+
+Started crawling, presently at depth..
+4
+3
+2
+1
+0
+
+Printing the results as is with page rank
+
+
+After Sorting the results by page rank
+
+>>> ================================ RESTART ================================
+>>> 
+Enter the seed page
+http://studcode.com/
+Enter What you want to search
+Home
+Enter the depth you wanna go
+5
+
+Started crawling, presently at depth..
+4
+3
+2
+1
+0
+
+Printing the results as is with page rank
+
+
+After Sorting the results by page rank
+
+>>> ================================ RESTART ================================
+>>> 
+Enter the seed page
+http://studcode.com/
+Enter What you want to search
+Welcome
+Enter the depth you wanna go
+5
+
+Started crawling, presently at depth..
+4
+3
+2
+1
+0
+
+Printing the results as is with page rank
+
+
+After Sorting the results by page rank
+
+>>> ================================ RESTART ================================
+>>> 
+Enter the seed page
+http://cricketdatanalysis.blogspot.in/
+Enter What you want to search
+Cricket
+Enter the depth you wanna go
+5
+
+Started crawling, presently at depth..
+4
+3
+2
+1
+0
+
+Printing the results as is with page rank
+
+http://cricketdatanalysis.blogspot.in/ --> 0.05
+
+After Sorting the results by page rank
+
+1.	http://cricketdatanalysis.blogspot.in/
+
+>>> 

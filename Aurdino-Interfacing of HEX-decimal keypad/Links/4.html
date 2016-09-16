@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.microcontroller-project.com/alphanumeric-keypad-with-arduino.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>alphanumeric keypad with arduino - MIcrocontroller Projects</title><meta name="description" content="How to build an alphanumeric keypad to use with arduino uno. Post includes code and circuit diagram of the project. lcd(16x2) and 4x3 keypad is interfaced with the arduino.">
+<meta name="keywords" content="alphanumeric,keypad,4x3,4x4,programming,numbers,characters,interface,project,circuit,code,make,build,16x2,lcd,arduino,uno,microcontroller,button,rows,coulombs,">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="alphanumeric keypad with arduino">
+<meta property="og:description" content="How to build an alphanumeric keypad to use with arduino uno. Post includes code and circuit diagram of the project. lcd(16x2) and 4x3 keypad is interfaced with the arduino.">
+<meta property="og:image" content="http://i1218.photobucket.com/albums/dd402/iftikhi/Pakistan/Pakistan.gif">
+<meta property="og:image" content="http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/8013959_orig.jpg">
+<meta property="og:url" content="http://www.microcontroller-project.com/alphanumeric-keypad-with-arduino.html">
+
+
+
+		<meta name="google-site-verification" content="k3ZDHVoPLqbI8Yu-tNlRZdj1M2R4Fyc1-Z7WPSVROwI">
+
+
+
+<meta name="msvalidate.01" content="DA1F449CFEEDB87F11377BFBFB6BCA88">
+
+<style type="text/css"></style><script type="text/javascript" async="" src="./4_files/cc.js"></script><script type="text/javascript" async="" src="./4_files/swiftype_onpage-86496bf10a8dcb21f124b42b0b9a91b5.js"></script><script type="text/javascript" async="" src="./4_files/widget.js"></script><script src="./4_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./4_files/ga.js"></script><script type="text/javascript" async="" src="./4_files/ga.js"></script><script type="text/javascript" async="" src="./4_files/embed.js"></script><link rel="stylesheet" type="text/css" href="./4_files/swiftype-372b0eab2251b5551acc7e940f39a528.css"><script src="./4_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script></head><body class="no-header-page  wsite-theme-light  wsite-page-alphanumeric-keypad-with-arduino" style="margin-right: 0px;"><a href="https://plus.google.com/+MicrocontrollerprojectForU" rel="publisher">Visit us on Google+</a>
+		<link rel="stylesheet" type="text/css" href="./4_files/sites.css">
+<link rel="stylesheet" type="text/css" href="./4_files/fancybox.css">
+<link rel="stylesheet" type="text/css" href="./4_files/main_style.css" title="wsite-theme-css">
+<link href="./4_files/css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {line-height:24px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {color:#2a2a2a !important;}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-not-footer h2.wsite-content-title a, .wsite-not-footer .paragraph a, .wsite-not-footer blockquote a, #blogTable .blog-sidebar a, #blogTable .blog-comments a, #blogTable .blog-comments-bottom a, #wsite-com-store a, #wsite-com-product-gen a {color:#5fa233 !important;}
+.wsite-menu-default a {font-family:"Arial" !important;font-size:18px !important;}
+.wsite-menu a {font-family:"Arial" !important;font-size:14px !important;}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {font-family:"Arial" !important;color:#5fa233 !important;line-height:14px !important;}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+.wsite-not-footer h2.wsite-content-title a:hover, .wsite-not-footer .paragraph a:hover, .wsite-not-footer blockquote a:hover, #blogTable .blog-sidebar a:hover, #blogTable .blog-comments a:hover, #blogTable .blog-comments-bottom a:hover, #wsite-com-store a:hover, #wsite-com-product-gen a:hover {color:#5fa233 !important;}
+</style>
+
+		<script async="" src="./4_files/st.js"></script><script type="text/javascript" async="" src="./4_files/ga.js"></script><script><!--
+var STATIC_BASE = '//cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src="./4_files/jquery.min.js"></script>
+
+<script src="./4_files/main.js"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript"><!--
+	
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"489134996542597023","title":"Home","url":"index.html","target":""},{"id":"926561800108373566","title":"8051","url":"8051.html","target":""},{"id":"697864244116179721","title":"projects","url":"projects.html","target":""},{"id":"723157505947443531","title":"Lcd Interfacing","url":"lcd-interfacing.html","target":""},{"id":"639425558555632864","title":"PIC Microcontroller Projects","url":"pic-microcontroller-projects.html","target":""},{"id":"113114153444349577","title":"c++ projects","url":"c-projects.html","target":""},{"id":"707212912832689778","title":"Arduino","url":"arduino.html","target":""},{"id":"344425751650483507","title":"Xilinx","url":"xilinx.html","target":""},{"id":"661417327627429512","title":"Knowledge based","url":"knowledge-based.html","target":""},{"id":"248419519291227696","title":"About Me","url":"about-me.html","target":""},{"id":"542843242163044076","title":"Contact Me","url":"contact-me.html","target":""},{"id":"685029119791574491","title":"40x4 lcd interfacing with microcontroller","url":"40x4-lcd-interfacing-with-microcontroller.html","target":""}],
+				"718062166134411747",
+				"<li class=\"wsite-menu-item-wrap\"><a href=\"#\" data-membership-required=\"\" class=\"wsite-menu-item\">{{title}}<\/a><\/li>",
+				'{{id}}',
+				false,
+				{"site\/menu\/submenu-main":"<div class=\"wsite-menu-wrap\" style=\"display:none\">{{! Designer note: \"wsite-menu-wrap\" required on submenu wrapper }}\n\t<ul class=\"wsite-menu\">{{! Designer note: \"wsite-menu\" required on submenu element }}\n\t\t{{#children}}{{> site\/menu\/submenu-item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","site\/menu\/submenu-item":"<li{{#id}} id=\"{{id}}\"{{\/id}} class=\"wsite-menu-subitem-wrap{{#current_page}} wsite-nav-current{{\/current_page}}\">{{! Designer note: id required & \"wsite-menu-subitem-wrap\" required on the item wrap }}\n\t<a href=\"{{itemlink}}\"{{#target}} target=\"{{target}}\"{{\/target}} class=\"wsite-menu-subitem\">{{! Designer note: \"wsite-menu-subitem\" required on the item link }}\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{itemtitle}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> site\/menu\/submenu-main}}{{\/has_children}}\n<\/li>\n","site\/menu\/main":"<ul class=\"wsite-menu-default\">{{> site\/menu\/main-without-wrap}}<\/ul>{{! Designer note: \"wsite-menu-default\" required on menu element }}\n","site\/menu\/main-without-wrap":"{{#links}}{{!\n}}{{#current_page}}{{> site\/menu\/item-current}}{{\/current_page}}{{!\n}}{{^current_page}}{{> site\/menu\/item}}{{\/current_page}}{{!\n}}{{\/links}}\n","site\/menu\/item-current":"<li{{#id}} id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">{{! Designer note: id required & \"wsite-menu-item-wrap\" required on the item wrapper }}\n\t<a href=\"{{itemlink}}\"{{#target}} target=\"{{target}}\"{{\/target}} class=\"wsite-menu-item\">{{! Designer note: \"wsite-menu-item\" required on the item link }}\n\t\t{{{itemtitle}}}\n\t<\/a>\n\t{{#has_children}}{{> site\/menu\/submenu-main}}{{\/has_children}}\n<\/li>\n","site\/menu\/item":"<li{{#id}} id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">{{! Designer note: id required & \"wsite-menu-item-wrap\" required on the item wrapper }}\n\t<a href=\"{{itemlink}}\" data-membership-required=\"{{membership-required}}\"{{#target}} target=\"{{target}}\"{{\/target}} class=\"wsite-menu-item\">{{! Designer note: \"wsite-menu-item\" required on the item link }}\n\t\t{{{itemtitle}}}\n\t<\/a>\n\t{{#has_children}}{{> site\/menu\/submenu-main}}{{\/has_children}}\n<\/li>\n"}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42860608-1']);
+  _gaq.push(['_setDomainName', 'microcontroller-project.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+<meta name="google-site-verification" content="k3ZDHVoPLqbI8Yu-tNlRZdj1M2R4Fyc1-Z7WPSVROwI">
+
+
+
+
+
+<script type="text/javascript">
+var infolinks_pid = 2051027;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+	
+	<div id="container">
+	<table id="header">
+		<tbody><tr>
+			<td id="logo"><span class="wsite-logo">
+
+	<a href="http://www.microcontroller-project.com/">
+	
+	<span id="wsite-title">MIcrocontroller Projects</span>
+	
+	</a>
+
+</span></td>
+			<td id="header-right">
+				<table>
+					<tbody><tr>
+						<td class="phone-number"><span class="wsite-text wsite-phone">
+	All About Electronics
+</span></td>
+						<td class="social"><div style="text-align:left;"><div style="height:0px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class="first-child wsite-social-item wsite-social-facebook" href="http://facebook.com/" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-twitter" href="http://twitter.com/" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-yahoo" href="http://yahoo.com/" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-linkedin" href="http://www.linkedin.com/" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="last-child wsite-social-item wsite-social-plus" href="https://plus.google.com/" target="_blank"><span class="wsite-social-item-inner"></span></a></span>
+<div style="height:0px;overflow:hidden"></div></div></td>
+					</tr>
+				</tbody></table>
+				<div class="search"></div>
+			</td>
+		</tr>
+	</tbody></table>
+	
+	<div><input type="hidden" name="IL_IN_TAG" value="2"></div>
+	
+	<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','wBpuGbeUKTzygEB4jfGS');
+</script>    
+
+<table> 
+  <tbody><tr>
+    <td align="right"> 
+	
+	<font size="8" color="GREEN">Search For More Microcontroller Projects!!!!!</font>
+	<form><input type="text" id="st-search-input" class="st-search-input" autocomplete="off" autocorrect="off" autocapitalize="off" style="outline: none;">
+	  </form>
+	
+	</td>
+  </tr>
+</tbody></table>
+
+	<!--Moving Text with Akistan Flag -->
+	<div align="center"><font color="green" size="+1"><marquee bgcolor="#0000000" direction="left" loop="20" width="75%" style="width: 75%;"><strong>We Can also help you in making your Final year projects. We are here in Pakistan.
+<img src="./4_files/Pakistan.gif" alt="Pakistan Flag">
+</strong></marquee></font></div>
+	
+	
+	
+	
+	
+	    <div id="main-wrap">
+		<div id="avmenu"><ul class="wsite-menu-default"><li id="pg489134996542597023" class="wsite-menu-item-wrap   wsite-nav-1" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		Home
+	</a>
+	
+
+</li>
+<li id="pg926561800108373566" class="wsite-menu-item-wrap   wsite-nav-2" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/8051.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		8051
+	</a>
+	
+
+</li>
+<li id="pg697864244116179721" class="wsite-menu-item-wrap   wsite-nav-3" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/projects.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		projects
+	</a>
+	
+
+</li>
+<li id="pg723157505947443531" class="wsite-menu-item-wrap   wsite-nav-4" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/lcd-interfacing.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		Lcd Interfacing
+	</a>
+	
+
+</li>
+<li id="pg639425558555632864" class="wsite-menu-item-wrap   wsite-nav-5" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/pic-microcontroller-projects.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		PIC Microcontroller Projects
+	</a>
+	
+
+</li>
+<li id="pg113114153444349577" class="wsite-menu-item-wrap   wsite-nav-6" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/c-projects.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		c   projects
+	</a>
+	
+
+</li>
+<li id="pg707212912832689778" class="wsite-menu-item-wrap   wsite-nav-7" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/arduino.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		Arduino
+	</a>
+	
+
+</li>
+<li id="pg344425751650483507" class="wsite-menu-item-wrap   wsite-nav-8" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/xilinx.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		Xilinx
+	</a>
+	
+
+</li>
+<li id="pg661417327627429512" class="wsite-menu-item-wrap   wsite-nav-9" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/knowledge-based.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		Knowledge based
+	</a>
+	
+
+</li>
+<li id="pg248419519291227696" class="wsite-menu-item-wrap   wsite-nav-10" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/about-me.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		About Me
+	</a>
+	
+</li>
+<li id="pg542843242163044076" class="wsite-menu-item-wrap   wsite-nav-11" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/contact-me.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		Contact Me
+	</a>
+	
+</li>
+<li id="pg685029119791574491" class="wsite-menu-item-wrap   wsite-nav-12" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/40x4-lcd-interfacing-with-microcontroller.html" data-membership-required="0" class="wsite-menu-item" style="position: relative;">
+		40x4 lcd interfacing with microcontroller
+	</a>
+	
+</li>
+
+</ul>
+
+		<div>
+		
+		
+<div class="fb-like-box" data-href="https://www.facebook.com/electronicsgru?ref_type=bookmark" data-width="60" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>		
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Half Page -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="5278560665"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		</div>
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		<div id="main">
+			<div id="banner">
+				<div class="wsite-header"></div>
+				<em id="tl"></em>
+				<em id="tr"></em>
+				<em id="bl"></em>
+				<em id="br"></em>
+			</div>
+			<div id="content"><div id="wsite-content" class="wsite-elements wsite-not-footer">
+<div><div id="279825431924409757" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><input type="hidden" name="IL_IN_TAG" value="2"></div>
+
+
+
+</div>
+
+<div><div id="861302692466794301" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><h1>How to interface 4x3 (Alphanumeric) keypad with Arduino uno</h1></div>
+
+
+
+</div>
+
+<div class="paragraph" style="text-align:justify;"><font size="3">Here is one more and complex project made using arduino. Project is about how to make and interface an alphanumeric keypad with arduino uno or we shall call it how to program 4x3 keypad to function like alphanumeric keypad. The project is complex in the&nbsp;scenario&nbsp;that its code is complex and it requires very sharp brain to understand the logic present in the code. One who wants to understand the code must not be a&nbsp;newbie&nbsp;in Arduino programming.</font><br><br><br><font size="3">Programming method is same like we do programming of a simple 4x3 or 4x4 keypad. The extra stuff in the code is now one button is&nbsp;carrying&nbsp;3 to 4 numbers and characters and we have to write logic that can perform this task. If button is pressed 1 time print the first character, if the same button is pressed second time with in a suitable time print the second character and so on.</font><br><br><br><font size="3">In the project below I am going to interface 4x3 keypad and 16x2 lcd with arduino uno. 4x3 keypad is programmed to perform alphanumeric keypad functionality. Characters and numbers associated Keypad will be displayed on 16x2 lcd, if any button is pressed.</font><br><font size="3">&nbsp;</font><br><strong><font color="#508d24" size="5">Project Requirements</font></strong><br><ul style="font-size: medium;"><li><span style="line-height: 1.5;">Arduino uno (I am using Arduino UNO)</span><br></li><li><span style="line-height: 1.5;">16x2 lcd.</span><br></li><li><span style="line-height: 1.5;">4x3 keypad &nbsp;(You can also use 4x4)</span><br></li><li><span style="line-height: 1.5;">Connecting wires</span><br></li></ul><br><font size="3">You can also use 4x4 keypad. Since 4x4 keypad contains 4x3 keypad in itself. If you use 4x4 keypad then the fourth coulomb of keypad will be kept void, do not connect it with arduino. If you press any key of fourth coulomb, nothing will happen. You can also modify the code and make it for 4x4 keypad. But to do that you first have to understand the code :-D</font><br><br><font size="3">The method is simple, make rows output and coulombs input. Now ground one row and others should be high. Press any button of the keypad then check the status of the coulombs if any coulomb is low do your stuff. If coulomb is low do stuff like print some text or message on 16x2 lcd, run interrupt service routine etc.</font><br><br><font size="3">The above method is applied on simple 4x3 keypad. To design an alphanumeric keypad what we do is checks the coulomb status. If it is grounded do some stuff and remain in the if-condition and check the same button or coulomb second time if it is grounded do stuff and remain in second if-condition and so on. If 4 alphabets are associated with your button then you should start from first and go until 4th condition is meet. &nbsp;</font><br></div>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a href="./4_files/8013959_orig.jpg" onclick="if (!lightboxLoaded) return false" class="w-fancybox">
+<img src="./4_files/8013959_orig.jpg" alt="4x3(4x4) keypad programming for arduino to make it alphanumeric keypad- Circuit Diagram" style="width:100%;max-width:991px">
+</a>
+<div style="display:block;font-size:90%">4x3(4x4) keypad programming for arduino to make it alphanumeric keypad</div>
+</div></div>
+
+<div class="paragraph" style="text-align:justify;"><font size="3">16x2 lcd is interfaced in 4-bit mode with arduino uno. RS(register select) pin of 16x2 lcd is connected to Pin#13 of Arduino. E(enable) pin of lcd is connected to Pin#12 of Arduino. D4, D5, D6 &amp; D7 data pins of lcd are connected to pin 11, 10, 9 &amp; 8 of Arduino. Usually all the eight data pins of lcd are used in the projects. But when we want to save the pins of our microcontroller we use lcd in 4-bit mode. In this mode 8-bit character is divided in to two nibbles (1 nibble=4-bit) and data is send in nibbles.&nbsp;<br><br>Some Tutorials related to the project<br><ul><li><a href="http://www.microcontroller-project.com/16x2-lcd-working.html" title="" style="line-height: 1.5; background-color: initial;">How does 16x2 lcd works?</a><br></li><li><a href="http://www.microcontroller-project.com/how-to-use-lcd-in-4-bit-mode-with-arduino.html" title="" style="line-height: 1.5; background-color: initial;">USing 16x2 lcd in 4-bit mode with Arduino.</a><br></li><li><a href="http://www.microcontroller-project.com/alphanumeric-keypad-with-8051-microcontroller.html" title="" style="line-height: 1.5; background-color: initial;">How to make Alphanumeric keypad with 8051 microcontroller?</a><br></li></ul><br>In the code i first imported the LiquidCrystal library. This library contains all the necessary functions to initialize the 16x2 lcd. It also contains the functions to send commands and data to lcd. Then i defined my rows and coulombs for keypad. Arduino pins 7 ,6 ,5 &amp; 4 are&nbsp;dedicated&nbsp;for my keypad rows and Arduino pins&nbsp;3, 2 &amp; 1 are&nbsp;dedicated&nbsp;for keypad coulombs. In setup function i initialized the lcd in 4-bit mode and 5x7 character display, made&nbsp;rows output and coulombs input.&nbsp;<br><br></font><br><font size="3">In the loop function i first set the lcd cursor on first row and first coulomb of lcd. Then alphkeypad() function is called. This function performs the function of alphanumeric keypad. The code is placed in while loop. Program control will remain in this while loop until the a='c'. &nbsp;&nbsp;<br><br></font><br><font size="3">Keypad buttons with associated numbers and characters.<br><ul><li><span style="line-height: 1.5; background-color: initial;">Button 1 &nbsp; &nbsp; &nbsp;printing 1-a-b-c</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 2 &nbsp; &nbsp; &nbsp;printing 2-d-e-f</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 3 &nbsp; &nbsp; &nbsp;printing 3-g-h-i</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 4 &nbsp; &nbsp; &nbsp;printing 4-j-k-l</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 5 &nbsp; &nbsp; &nbsp;printing 5-m-n-o</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 6 &nbsp; &nbsp; &nbsp;printing 6-p-q-r</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 7 &nbsp; &nbsp; &nbsp;printing 7-s-t-u</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 8 &nbsp; &nbsp; &nbsp;printing 8-v-w-x</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 9 &nbsp; &nbsp; &nbsp;printing 9-y-z</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 10 &nbsp; &nbsp;printing *-(-)-'-'</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 11 &nbsp; &nbsp;printing 0-&amp;-|-!</span><br></li><li><span style="line-height: 1.5; background-color: initial;">Button 12 &nbsp; &nbsp;printing #-%-^-&amp;</span><br></li></ul><br>Their is half a second delay in characters of a same button. For example button 1 is printing 1,a,b,c. Now if you want to print c. Press button 1 first time then with in half a second press it second time, then in half a second press it third time, then in next half a second press it fourth time and 'c' will be displayed on the 16x2 lcd. If you do not press the button in half a second you will stuck to the last printed character and will be unable to go to next character. Take the example of mobile&nbsp;phone&nbsp;keypad.&nbsp;when you write message you press the first button, four times to print 1 on screen. If you&nbsp;don't&nbsp;press the button in suitable time you will be unable to reach to 1. So you delete the last&nbsp;character and then go again for 1. Same concept applies here. If you&nbsp;don't&nbsp;press the key in right&nbsp;time you will be unable to reach to your desired character. &nbsp;</font><br></div>
+
+<div><div id="265190146727951035" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><h2>Project Code</h2></div>
+
+
+
+</div>
+
+<div><div id="308453737185681859" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div id="test" align="left" onmousedown="return false;" onselectstart="return false;">
+<br><font size="3" color="#585858"><pre>
+#include&lt; LiquidCrystal.h&gt;
+LiquidCrystal lcd(13,12,11,10,9,8);
+const int r1=7;
+const int r2=6;
+const int r3=5;
+const int r4=4;
+const int c1=3;
+const int c2=2;
+const int c3=1;
+void alphkeypad();
+
+
+void setup()
+{
+lcd.begin(16 , 2);
+lcd.clear();
+pinMode(r1,OUTPUT);
+pinMode(r2,OUTPUT);
+pinMode(r3,OUTPUT);
+pinMode(r4,OUTPUT);
+pinMode(c1,INPUT);
+pinMode(c2,INPUT);
+pinMode(c3,INPUT);
+}
+
+void loop()
+{
+  int i=0;
+lcd.setCursor(0, 0);
+alphkeypad();
+}
+
+void alphkeypad(){
+
+char a='a';
+
+while(a!='c'){
+digitalWrite(c1,HIGH);  digitalWrite(c2,HIGH);digitalWrite(c3,HIGH);
+    digitalWrite(r1,LOW);digitalWrite(r2,HIGH);
+    digitalWrite(r3,HIGH);digitalWrite(r4,HIGH);
+    if(digitalRead(c1)==LOW){
+    lcd.clear();lcd.print('1');delay(500);
+      if(digitalRead(c1)==LOW){
+     lcd.clear(); lcd.print('a');delay(500);
+        if(digitalRead(c1)==LOW){
+       lcd.clear(); lcd.print('b');delay(500);
+          if(digitalRead(c1)==LOW){
+        lcd.clear();  lcd.print('c');delay(500);}}}
+    a='c';    
+  
+}
+  
+  
+    digitalWrite(r1,LOW);digitalWrite(r2,HIGH);
+    digitalWrite(r3,HIGH);digitalWrite(r4,HIGH);
+    if(digitalRead(c2)==LOW){
+    lcd.clear();lcd.print('2');delay(500);
+      if(digitalRead(c2)==LOW){
+      lcd.clear();lcd.print('d');delay(500);
+        if(digitalRead(c2)==LOW){
+        lcd.clear();lcd.print('e');delay(500);
+          if(digitalRead(c2)==LOW){
+          lcd.clear();lcd.print('f');delay(500);}}}
+    a='c';
+            
+}
+  
+   
+    digitalWrite(r1,LOW);digitalWrite(r2,HIGH);
+    digitalWrite(r3,HIGH);digitalWrite(r4,HIGH);
+    if(digitalRead(c3)==LOW){
+    lcd.clear();lcd.print('3');delay(500);
+      if(digitalRead(c3)==LOW){
+      lcd.clear();lcd.print('g');delay(500);
+        if(digitalRead(c3)==LOW){
+        lcd.clear();lcd.print('g');delay(500);
+          if(digitalRead(c3)==LOW){
+          lcd.clear();lcd.print('i');delay(500);}}}
+           a='c';  
+  }
+  
+   
+    digitalWrite(r1,HIGH);digitalWrite(r2,LOW);
+    digitalWrite(r3,HIGH);digitalWrite(r4,HIGH);
+    if(digitalRead(c1)==LOW){
+    lcd.clear();lcd.print('4');delay(500);
+      if(digitalRead(c1)==LOW){
+      lcd.clear();lcd.print('j');delay(500);
+        if(digitalRead(c1)==LOW){
+        lcd.clear();lcd.print('k');delay(500);
+          if(digitalRead(c1)==LOW){
+          lcd.clear();lcd.print('l');delay(500);}}}
+          a='c';  
+  }
+  
+     
+    digitalWrite(r1,HIGH);digitalWrite(r2,LOW);
+    digitalWrite(r3,HIGH);digitalWrite(r4,HIGH);
+    if(digitalRead(c2)==LOW){
+    lcd.clear();lcd.print('5');delay(500);
+      if(digitalRead(c2)==LOW){
+      lcd.clear();lcd.print('m');delay(500);
+        if(digitalRead(c2)==LOW){
+        lcd.clear();lcd.print('n');delay(500);
+          if(digitalRead(c2)==LOW){
+          lcd.clear();lcd.print('o');delay(500);}}}
+          a='c';  
+  }
+  
+  
+     
+    digitalWrite(r1,HIGH);digitalWrite(r2,LOW);
+    digitalWrite(r3,HIGH);digitalWrite(r4,HIGH);
+    if(digitalRead(c3)==LOW){
+    lcd.clear();lcd.print('6');delay(500);
+      if(digitalRead(c3)==LOW){
+      lcd.clear();lcd.print('p');delay(500);
+        if(digitalRead(c3)==LOW){
+        lcd.clear();lcd.print('q');delay(500);
+          if(digitalRead(c3)==LOW){
+          lcd.clear();lcd.print('r');delay(500);}}}
+          a='c';
+    }
+  
+      
+    digitalWrite(r1,HIGH);digitalWrite(r2,HIGH);
+    digitalWrite(r3,LOW);digitalWrite(r4,HIGH);
+    if(digitalRead(c1)==LOW){
+    lcd.clear();lcd.print('7');delay(500);
+      if(digitalRead(c1)==LOW){
+      lcd.clear();lcd.print('s');delay(500);
+        if(digitalRead(c1)==LOW){
+        lcd.clear();lcd.print('t');delay(500);
+          if(digitalRead(c1)==LOW){
+          lcd.clear();lcd.print('u');delay(500);}}}
+          a='c'   ;
+    }
+  
+     
+    digitalWrite(r1,HIGH);digitalWrite(r2,HIGH);
+    digitalWrite(r3,LOW);digitalWrite(r4,HIGH);
+    if(digitalRead(c2)==LOW){
+    lcd.clear();lcd.print('8');delay(500);
+      if(digitalRead(c2)==LOW){
+      lcd.clear();lcd.print('v');delay(500);
+        if(digitalRead(c2)==LOW){
+        lcd.clear();lcd.print('w');delay(500);
+          if(digitalRead(c2)==LOW){
+          lcd.clear();lcd.print('x');delay(500);}}}
+          a='c';
+    }
+  
+    digitalWrite(r1,HIGH);digitalWrite(r2,HIGH);
+    digitalWrite(r3,LOW);digitalWrite(r4,HIGH);
+    if(digitalRead(c3)==LOW){
+    lcd.clear();lcd.print('9');delay(500);
+      if(digitalRead(c3)==LOW){
+      lcd.clear();lcd.print('y');delay(500);
+        if(digitalRead(c3)==LOW){
+        lcd.clear();lcd.print('z');delay(500);
+          }}
+          a='c';
+    } 
+  
+     digitalWrite(r1,HIGH);digitalWrite(r2,HIGH);
+    digitalWrite(r3,HIGH);digitalWrite(r4,LOW);
+    if(digitalRead(c1)==LOW){
+    lcd.clear();lcd.print('*');delay(500);
+      if(digitalRead(c1)==LOW){
+      lcd.clear();lcd.print('(');delay(500);
+        if(digitalRead(c1)==LOW){
+        lcd.clear();lcd.print(')');delay(500);
+          if(digitalRead(c1)==LOW){
+          lcd.clear();lcd.print('-');delay(500);}}}
+          a='c';
+    }
+  
+    digitalWrite(r1,HIGH);digitalWrite(r2,HIGH);
+    digitalWrite(r3,HIGH);digitalWrite(r4,LOW);
+    if(digitalRead(c2)==LOW){
+    lcd.clear();lcd.print('0');delay(500);
+      if(digitalRead(c2)==LOW){
+      lcd.clear();lcd.print('&amp;');delay(500);
+        if(digitalRead(c2)==LOW){
+        lcd.clear();lcd.print('|');delay(500);
+          if(digitalRead(c2)==LOW){
+          lcd.clear();lcd.print('!');delay(500);}}}
+          a='c';
+    }
+  
+    digitalWrite(r1,HIGH);digitalWrite(r2,HIGH);
+    digitalWrite(r3,HIGH);digitalWrite(r4,LOW);
+    if(digitalRead(c3)==LOW){
+    lcd.clear();lcd.print('#');delay(500);
+      if(digitalRead(c3)==LOW){
+      lcd.clear();lcd.print('%');delay(500);
+        if(digitalRead(c3)==LOW){
+        lcd.clear();lcd.print('^');delay(500);
+          if(digitalRead(c3)==LOW){
+          lcd.clear();lcd.print('&amp;');delay(500);}}}
+          a='c';
+    }
+ 
+  }//WHILE ENDING
+
+}//KEYPAD  ENDING
+</pre></font><br></div></div>
+
+
+
+</div>
+
+<div><div id="597884044936093418" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div id="test" align="justify" onmousedown="return false;" onselectstart="return false;">
+
+<br><font size="6" color="green">
+
+Download the project files. Folder contains the project code and arduino .ino file. Give us your feed back on the post. If you feel any difficulty in the code leave your message below.
+</font><br>
+</div>
+<input type="hidden" name="IL_IN_TAG" value="2">
+
+
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- custom sized ad -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8954746221155592" data-ad-slot="2958858666" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+
+
+</div>
+
+<div class="paragraph" style="text-align:right;"><font size="3"><a href="http://www.microcontroller-project.com/uploads/2/2/1/5/22159166/alphanumeric_keypad_with_arduino.rar" title=""><font color="#508d24">Alphanumeric-Keypad with Arduino</font></a></font></div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div id="791274224907797230" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- new vertical links -->
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="6051925862"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+
+
+</div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div id="834867179791456785" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Image -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-8954746221155592" data-ad-slot="7563649866"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+
+
+</div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div><div id="581736200129752802" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">    <div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./4_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 479px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'microcontroller'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+    
+    </div>
+
+
+
+</div></div>
+</div>
+			<div id="footer"><div class="wsite-elements wsite-footer">
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:40.748898678414%; padding:0 15px;">
+					
+						
+
+<div class="paragraph" style="text-align:left;"><strong style="line-height: 1.5; color: rgb(80, 141, 36); background-color: initial;"><font size="4"><font color="#508d24"><a href="http://www.microcontroller-project.com/projects.html" title=""><font color="#508d24">8051 projects</font></a>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font><a href="http://www.microcontroller-project.com/c-projects.html" title=""><font color="#508d24">C++ projects</font></a></font></strong><br><font size="4"><span style="line-height: 27px;"><strong><a href="http://www.microcontroller-project.com/xilinx.html" title=""><font><font color="#508d24">Xilinx</font></font></a></strong></span></font><font color="#8d2424"><font size="4"><span style="line-height: 27px;"><br></span></font></font></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:59.251101321586%; padding:0 15px;">
+					
+						
+
+<div class="paragraph" style="text-align:left;"><strong><font size="4"><font color="#508d24"><font color="#508d24"><a href="http://www.microcontroller-project.com/projects.html" title=""><span style="line-height: 0; display: none;">﻿</span><font color="#508d24">Arduino projects</font><span style="line-height: 0; display: none;">﻿</span></a>&nbsp;</font> &nbsp; &nbsp;&nbsp;</font></font></strong><strong style="line-height: 1.5; background-color: initial;"><font size="4"><a href="http://www.microcontroller-project.com/knowledge-based.html" title=""><font color="#508d24">Knowledge based</font></a></font></strong><br><strong><font size="4"><a href="http://www.microcontroller-project.com/about-me.html" title=""><font color="#508d24">About me</font></a></font></strong><br></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="paragraph" style="text-align:center;"><font color="#5fa233">Copyright © 2014 microcontroller-project.com. All rights reserved.<br>Unless otherwise indicated, all materials on these pages are copyrighted by the microcontroller-project.com. All rights reserved. No part of these pages, either text or image may be used for any purpose other than personal use.</font><br></div></div>
+<script type="text/javascript">
+<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script>
+</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];      
+  _gaq.push(['_setAccount', 'UA-42860608-1']);
+  _gaq.push(['_setDomainName', 'microcontroller-project.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l5,u22159166.u22159166s216214139321792665"
+});
+</script>
+
+<noscript>
+&lt;div style="display:none;"&gt;
+&lt;img src="//pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l5,u22159166.u22159166s216214139321792665" border="0" height="1" width="1" alt="Quantcast"/&gt;
+&lt;/div&gt;
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				jQuery('#commentArea iframe').css('min-height', '410px');
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+
+
+	
+
+<div id="wsite-menus"><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-571642529988147914" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/pickit2-clone-build-at-home.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Pickit2 clone build at home
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-245761620817855218" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/serial-data-received-from-pc-using-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			serial data received from pc using 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-658847542849625365" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/door-counter-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			door counter with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-100110369374678926" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/leds-with-8255-and-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			leds with 8255 and 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-212729367475434599" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/displaying-moving-text-string-on-16x2-lcd-using-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Displaying moving text string on 16x2 lcd using 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-763253424755359097" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/calcultor-with-8051-in-c-language.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Calcultor with 8051 in c language
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-253947070258422075" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/adc0804-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			adc0804 with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-679939309350574076" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/how-to-generate-one-minute-delay-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			how to generate one minute delay with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-461701677838993065" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/custom-characters-on-16x2-lcd-using-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Custom characters on 16x2 lcd using 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-841559448459092178" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/automatic-door-lock-with-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Automatic door lock with 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-474073358972565206" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/fading-led-using-89c51-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Fading led using 89c51 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-394354896595346859" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/dc-motor-speed-control-using-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Dc motor speed control using 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-662612845267627482" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/alphanumeric-keypad-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			alphanumeric keypad with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="position: absolute; left: 398.5px; display: none; top: 428px;">
+	<ul class="wsite-menu" style="display: none;">
+		<li id="wsite-nav-359378852535188110" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/room-temperature-with-89c51-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			room temperature with 89c51 microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-732831085667049433" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/seven-segment-display-with-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Seven segment display with 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-833870672343356465" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/counter-with-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Counter with 8051
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-207828089484831721" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/piezo-knock-sensor-used-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Piezo knock sensor used with Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-644243916818667983" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/generating-frequency-from-ardunio-board.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Generating frequency from Ardunio board 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-581375171726284748" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/ldr-with-piezo-sensor.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			LDR WITH piezo sensor
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-433247052407056579" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/displaying-ascii-characters-on-16x2-lcd.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			displaying ascii characters on 16x2 lcd
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-629712716404909258" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/uni-directional-dc-motor.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Uni directional DC-motor
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-573329322782653798" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/driving-dc-motor-bi-directionaly.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Driving DC motor bi-directionaly
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-158421668518370880" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/keypad-and-lcd-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			keypad and lcd with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-119023024301892622" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/seven-segment-display-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			seven segment display with arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-366075348718741154" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/displaying-ascii-characters-on-16x2-lcd-with-ardunio.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Displaying ASCII characters on 16x2 lcd with Ardunio
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-428562361127156365" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/displaying-text-on-16x2-lcd.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			displaying text on 16x2 lcd
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-790070443619346190" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/moving-text-on-16x2-lcd-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			moving text on 16x2 lcd with arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-543618935900085780" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/serial-data-transmission.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Serial data transmission 
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-576939426528473237" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/measuring-room-temperature-with-lm35-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Measuring room temperature with LM35 using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-180126816994899443" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/arduino-temperature-sensor-with-lm35.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Arduino temperature sensor with LM35
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-670761824964181701" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/scrolling-text-on-lcd-with-pic-16f877.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			scrolling text on lcd with pic 16f877
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-718062166134411747" class="wsite-menu-subitem-wrap wsite-nav-current" style="position: relative;">
+	<a href="./4_files/4.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			alphanumeric keypad with arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-384649321185251294" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/how-to-generate-one-second-delay-with-8051-timers.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			How to generate one second delay with 8051 timers
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-315738277128892745" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/name-on-lcd-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			name on lcd with 8051 microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-482617029655250001" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/digital-clock-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Digital clock with 8051 microcontroller 
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-237400290433114436" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/digital-alarm-with-8051-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			digital alarm with 8051 microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-609154832487060883" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/stepper-motor-with-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			stepper motor with 8051
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-360616995183780990" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/button-and-led-with-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			button and led with 8051
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-281258815816285465" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/fading-led-with-potentiometer-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Fading led with potentiometer using arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-553056644386966709" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/fading-led-with-ldr-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Fading led with ldr using arduino
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-669456449341644906" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/bidirectional-motor-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			bidirectional motor with Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-158733000607839720" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/fading-leds-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Fading leds using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-419240448461768722" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/blinking-leds-with-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Blinking leds with 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-959745677413309240" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/graphical-lcd-with-89c51-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Graphical lcd with 89c51 microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-642785394453389173" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/making-custom-characters-on-lcd-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Making custom characters on lcd  using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-565902582361334555" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/making-custom-urdu-characters-using-8051-micro-controller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Making Custom urdu characters using 8051 micro controller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-922253264439474801" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/making-custom-urdu-alphabets-on-16x2-lcd-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Making Custom urdu alphabets on 16x2 lcd using arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-879763583183708728" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/interfacing-24x2-lcd-with-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			interfacing 24x2 lcd with microcontroller
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-270047511748769997" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/calculator-with-pic16f877-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			calculator with pic16f877 microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-117804170110173602" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/graphical-lcd-jhd12864e-with-pic-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Graphical Lcd JHD12864E with Pic Microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-768567377971405333" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/displaying-images-on-graphical-lcd.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			displaying images on graphical lcd
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-195528117631097167" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/serial-communication-with-pic16f877.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			serial communication with pic16f877
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-581752297877821038" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/fan-speed-control-using-pic-16f877.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Fan speed control using pic 16f877 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-887315588260547509" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/serial-data-receive-from-pc-using-pic-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			serial data receive from Pc using Pic microcontroller
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-616373909383495103" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/pushbutton-and-led-with-pic.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			pushbutton and led with pic  
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-801650997751846334" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/atm-machine.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			ATM machine
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-957457686629985145" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/tic-tack-toe-in-c.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Tic Tack Toe in c++
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-531301963703697928" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/toll-tax-system-in-c.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Toll tax system in c++
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-103820709325991235" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/bus-reservation-system.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Bus Reservation system
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-126807231752136930" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/train-seat-reservation-system-in-c.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Train seat reservation system in c++
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-789746349318688776" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/population-data-base.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			population data base
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-311030880480678308" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/sorting-class-data-in-c.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Sorting class data in c++
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-441370939833262194" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/gsmsim900d-with-arduino-uno.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Gsm(Sim900d) with Arduino uno
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-873495525236490614" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/clock-and-calendar-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			clock and calendar with arduino 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-987108319787245895" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/calculator-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Calculator using Arduino 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-375629563325947793" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/increasing-digital-io-of-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Increasing Digital I/O of Arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-323115610949434846" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/traffic-lights-on-fpga.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Traffic lights on FPGA
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-531829571157576589" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/conditional-sum-adder-in-xilinx.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Conditional sum adder in xilinx
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-935125374207193200" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/counter-in-xilinx.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Counter in xilinx
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-279869721255607327" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/4x1-mux-8x1-mux-designed-in-xilinx.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			4x1 mux 8x1 mux designed in xilinx
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-735787285210069827" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/adder-in-vhdl.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Adder in VHDL  
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-423894296527788013" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/bcd-to-seven-segment-decoder-in-xilinx.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			BCD to seven segment decoder in xilinx
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-245821279680138547" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/simple-circuit-designed-in-xilinx.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Simple circuit designed in xilinx
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-362019958181910243" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/programming-modes-in-xilinx.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Programming modes in xilinx
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div><div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-333465066579698040" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/character-lcd-pinout--working.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Character lcd pinout &amp; working
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-378338193268231391" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/lcd-in-4bit-mode-with-pic-microcontroller.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			lcd in 4bit mode with pic microcontroller
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-507698908700219301" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/16x2-lcd-working.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			16x2 LCD working
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-496422853384766079" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/how-to-use-lcd-in-4-bit-mode-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			How to use lcd in 4-bit mode with Arduino
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-961068324427923775" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/lcd-in-4-bit-mode-and-8-bit-mode.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			lcd in 4-bit mode and 8-bit mode
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-308905414762016768" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/commands-and-data-send-to-16x2-lcd.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			commands and data send to 16x2 lcd
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-732206504746770646" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/common-anode-and-cathode-7-segment-display.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			common anode and cathode 7-segment display
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-674088130738664090" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/internal-timer-registers-of-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Internal Timer Registers of 8051
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-151824665596511748" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/max232-pin-out-and-description.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			MAX232 pin out and description
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-933535719759950357" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/adc0804-pinout.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			ADC0804 pinout 
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-517664935664508515" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/driving-a-dc-motor-through-transistor.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Driving a DC motor through Transistor
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-322925298444769948" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/l293d-pin-description-and-working.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			L293d pin description and working
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-744973692992209676" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/how-to-blink-an-led-using-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			How to Blink an led using 8051
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-831070922339312594" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/making-custom-characters-on-16x2-lcd.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Making Custom characters on 16x2 lcd
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-283600736382054847" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/8255-pinout-and-working.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			8255 pinout and working
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-256769717428430095" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/precautions-using-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Precautions using Arduino
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-328834015210388141" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/128x64-graphical-lcd.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			128x64 graphical lcd
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-519948662367098834" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/ir-pair-cuircuit.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			IR pair cuircuit
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-808350478696393874" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/difference-between-touch-screens-and-normal-keypads.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			Difference between touch screens and normal keypads
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+<li id="wsite-nav-589313023282876065" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/4x4-4x3-numeric-keypad-programming-with-arduino.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			4x4 ,4x3 numeric keypad programming with arduino 
+		</span><span class="wsite-menu-arrow">&gt;</span>
+	</a>
+	<div class="wsite-menu-wrap" style="display: none; position: absolute;">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-354493280393936287" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/4x4-numeric-keypad-programming.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			4x4 numeric keypad programming
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-272719305708059512" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/8051-microcontroller-registers.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			8051 microcontroller registers
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-218486517580111166" class="wsite-menu-subitem-wrap" style="position: relative;">
+	<a href="http://www.microcontroller-project.com/4x4-alphanumeric-keypad-programing-in-c-for-8051.html" class="wsite-menu-subitem" style="position: relative;">
+		<span class="wsite-menu-title">
+			4x4 alphanumeric keypad programing in c for 8051 
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+</li>
+
+	</ul>
+</div></div><div class="swiftype-widget"><div class="autocomplete" style="position: absolute; z-index: 199999; width: 234px; top: 246px; left: 907.5px; display: none;"><ul></ul></div></div></body></html>

@@ -1,0 +1,5 @@
+Thomas Sargent,   .
+"Matlab code for Nash feedback equilibrium of a linear quadratic dynamic game," QM&RBC Codes
+25, Quantitative Macroeconomics & Real Business Cycles.
+Abstract: This program computes the Nash feedback equilibrium of a linear quadratic dynamic game. Each of two players solves a linear quadratic optimization problem, taking as given and known the sequence of linear feedback rules used by his opponent. The particular game analyzed is a price-quantity setting game suggested by Ken Judd.
+Keywords: 

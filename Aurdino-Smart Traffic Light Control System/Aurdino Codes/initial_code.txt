@@ -1,0 +1,38 @@
+int pin1 =12;
+int pin2 =8;
+int pin3=7;
+int pushButton= 4;
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  // make the pushbutton's pin an input:
+  //make pin1,pin2,pin3 as output:
+  pinMode(pin1, OUTPUT);
+  pinMode(pin2,OUTPUT);
+  pinMode(pin3,OUTPUT);
+  pinMode(pushButton,INPUT);
+}
+void loop() 
+{
+    int pina = digitalRead(pushButton);
+  // print out the state of the button:
+  Serial.println(pina);
+  delay(1);        // 
+  if(pina==0)
+{
+  digitalWrite(12,HIGH);
+  delay(1000);
+  digitalWrite(12,LOW);
+ digitalWrite(7,HIGH);
+ delay(1000);
+ digitalWrite(7,LOW);
+digitalWrite(8,HIGH);
+delay(1000);
+digitalWrite(8,LOW);
+}
+else
+   {digitalWrite(12,HIGH);
+ digitalWrite(7,LOW);
+ digitalWrite(8,LOW);
+}
+}

@@ -1,0 +1,9 @@
+n := 5;
+p := 1;
+if n > 6 then
+ p := p * n;
+ n := n - 1
+else
+ n := n - 2;
+ p := 4*3-2+1
+end

@@ -1,0 +1,49 @@
+Data Fields
+
+struct sk_buff* 	next
+struct sk_buff* 	prev
+struct sk_buff_head* 	list
+struct sock* 	sk
+struct timeval 	stamp
+struct net_device* 	dev
+struct net_device* 	real_dev
+union {
+   struct tcphdr*   th
+   struct udphdr*   uh
+   struct icmphdr*   icmph
+   struct igmphdr*   igmph
+   struct iphdr*   ipiph
+   struct ipv6hdr*   ipv6h
+   unsigned char*   raw
+} 	h
+union {
+   struct iphdr*   iph
+   struct ipv6hdr*   ipv6h
+   struct arphdr*   arph
+   unsigned char*   raw
+} 	nh
+union {
+   struct ethhdr*   ethernet
+   unsigned char*   raw
+} 	mac
+struct dst_entry* 	dst
+struct sec_path* 	sp
+char 	cb [48]
+unsigned int 	len
+unsigned int 	data_len
+unsigned int 	mac_len
+unsigned int 	csum
+unsigned char 	local_df
+unsigned char 	cloned
+unsigned char 	pkt_type
+unsigned char 	ip_summed
+__u32 	priority
+unsigned short 	protocol
+unsigned short 	security
+void (* 	destructor )(struct sk_buff *skb)
+unsigned int 	truesize
+atomic_t 	users
+unsigned char* 	head
+unsigned char * 	data
+unsigned char * 	tail
+unsigned char * 	end
